@@ -1,0 +1,29 @@
+@charset "utf-8";
+
+@use "../../foundation/base" as *;
+@use "../../foundation/mixins" as *;
+@use "../../foundation/variables" as *;
+
+
+.p-mv{
+    background-image: url(../../../images/news/mv@2x.jpg);
+
+
+    @include respond(phone){
+        background-image: url(../../../images/news/mv-sp@2x.jpg);
+    }
+}
+
+
+.p-content{
+    background-color: $color-primary;
+    padding-top: 85.6px;
+    padding-bottom: 77px;
+    color: $color-white;
+}
+
+.p-heading-secondary{
+    margin-bottom: calc(74px + var(--lending-trim));
+}
+
+// 詳細ページ

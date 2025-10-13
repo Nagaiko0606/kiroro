@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <%- include('../inc/_head', { site: site, page: pages.company, basePath: '../' }) %>
+    <link rel="stylesheet" href="../assets/css/project/404/style.css">
+</head>
+
+<body>
+  <%- include('../inc/_header', { basePath: '../' }) %>
+    <main class="l-main --underlayer">
+      <div class="p-content">
+        <div class="l-container">
+          <div class="c-heading-secondary p-heading-secondary">
+            <img src="../assets/images/logo-green.png" alt="" width="137" height="140">
+            <h1 class="c-heading-secondary__text --white">404 Not Found</h1>
+          </div>
+          <p class="p-text-large u-align-center">
+            ページが見つかりませんでした
+          </p>
+          <p class="p-text u-align-center">
+            お探しのページは削除されたか、名前が変更された、
+            または一時的に利用できない可能性があります。
+          </p>
+          <div class="u-align-center p-button">
+            <a href="#" class="c-button --secondary">トップへ戻る</a>
+          </div>
+        </div>
+      </div>
+    </main>
+
+    <%- include('../inc/_footer', { basePath: '../' }) %>
+</body>

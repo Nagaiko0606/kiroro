@@ -1,0 +1,16 @@
+@charset "utf-8";
+
+@use "../../foundation/base" as *;
+@use "../../foundation/mixins" as *;
+@use "../../foundation/variables" as *;
+
+
+.p-mv{
+    background-image: url(../../../images/recruit/mv.jpg);
+
+
+    @include respond(phone){
+        background-image: url(../../../images/recruit/mv-sp.jpg);
+    }
+}
+

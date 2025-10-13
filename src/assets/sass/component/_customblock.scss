@@ -1,0 +1,390 @@
+@use "../foundation/variables" as *;
+@use "../foundation/mixins" as *;
+
+// lazyblockエディタ表示
+.lazyblock {
+    padding: 0;
+    box-shadow: 0 0 0 1px violet;
+
+    .lzb-content-title {
+        display: none;
+    }
+}
+
+// / lightbox
+
+.c-gallery-wrapper {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr) !important;
+    column-gap: min(calc((30/1000)* 100vw), 30px) !important;
+    row-gap: min(calc((50/1000)* 100vw), 50px) !important;
+
+    @include respond(phone) {
+        grid-template-columns: repeat(2, 1fr) !important;
+    }
+}
+
+.c-gallery {
+    width: 100%;
+    height: auto;
+    aspect-ratio: 1/1;
+    position: relative;
+
+    img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+
+    &__text {
+        position: absolute;
+        bottom: 0;
+        width: 100%;
+        padding-block: calc(9px + var(--lending-trim));
+        padding-inline: 11px;
+        line-height: 1.5;
+        font-size: rem(17);
+        background-color: rgba(0, 0, 0, 0.4);
+        color: $color-white;
+    }
+
+    @include respond(phone) {
+        &__text {
+            font-size: rem(14);
+            padding-inline: 0.5em;
+        }
+    }
+
+}
+
+// 病院情報テーブル
+// .c-info-table {
+//     td {
+//         border: none;
+//         padding: 0;
+//         line-height: calc(36/19);
+//     }
+
+//     td:first-child {
+//         color: $color-primary;
+//         text-align-last: justify;
+//         width: 6.5em;
+//         padding-right: 1.5em;
+//     }
+
+//     td strong {
+//         font-weight: 400;
+//         color: $color-primary;
+//     }
+
+//     td.low {
+//         line-height: calc(36/19);
+//     }
+
+//     &--secondary {
+//         tr:last-child {
+//             td {
+//                 line-height: calc(36/19);
+//             }
+//         }
+//     }
+// }
+
+.c-info-list {
+    display: table;
+
+    dt,
+    dd {
+        display: table-cell;
+        padding: 0;
+        line-height: calc(36/19);
+    }
+
+    dt {
+        color: $color-primary;
+        text-align-last: justify;
+        width: 6.5em;
+        padding-right: 2em;
+        font-weight: 400;
+    }
+
+    dd{
+        >p{
+            margin-bottom: 5px !important;
+        }
+    }
+
+}
+
+// 勤務情報テーブル
+.c-work-calendar {
+    border: solid 1px #557259;
+    border-collapse: collapse;
+
+    th,
+    td {
+        line-height: 1;
+        border: solid 1px #557259;
+        vertical-align: middle;
+    }
+
+    th:first-child,
+    td:first-child {
+        background-color: #8DB68F;
+    }
+
+    thead {
+        th {
+            padding-block: 9.6px;
+            font-weight: 400;
+            text-align: center;
+            font-size: rem(18);
+            color: $color-primary-dark;
+        }
+    }
+
+    tbody {
+        th {
+            font-size: rem(18);
+            color: $color-white;
+            padding-inline: 13px;
+            letter-spacing: 0.1em;
+            padding-block: 9px;
+            white-space: nowrap;
+            font-weight: 400;
+        }
+
+        td {
+            font-size: rem(29);
+            width: rem(37);
+            color: $color-primary;
+            text-align: center;
+        }
+    }
+
+    tr[data-selected-days*="sun-c"] th:nth-child(2),
+    tr[data-selected-days*="mon-c"] th:nth-child(3),
+    tr[data-selected-days*="tue-c"] th:nth-child(4),
+    tr[data-selected-days*="wed-c"] th:nth-child(5),
+    tr[data-selected-days*="thu-c"] th:nth-child(6),
+    tr[data-selected-days*="fri-c"] th:nth-child(7),
+    tr[data-selected-days*="sat-c"] th:nth-child(8),
+    tr[data-selected-days*="sun-c"] td:nth-child(2),
+    tr[data-selected-days*="mon-c"] td:nth-child(3),
+    tr[data-selected-days*="tue-c"] td:nth-child(4),
+    tr[data-selected-days*="wed-c"] td:nth-child(5),
+    tr[data-selected-days*="thu-c"] td:nth-child(6),
+    tr[data-selected-days*="fri-c"] td:nth-child(7),
+    tr[data-selected-days*="sat-c"] td:nth-child(8) {
+        background-color: #CCCCCC;
+    }
+
+    @include respond(phone) {
+        width: 100%;
+        max-width: 345px;
+
+        thead {
+            th {
+                padding-block: min(calc((7/414) * 100vw), rem(7));
+                font-size: min(calc((14/414) * 100vw), rem(14));
+            }
+        }
+
+        tbody {
+            th {
+                font-size: min(calc((15/414) * 100vw), rem(15));
+                padding-inline: min(calc((7/414) * 100vw), rem(7));
+                padding-block: min(calc((8/414) * 100vw), rem(8));
+                ;
+            }
+
+            td {
+                font-size: min(calc((23/414) * 100vw), rem(23));
+                width: min(calc((29/414) * 100vw), rem(29));
+            }
+        }
+    }
+}
+
+.c-map {
+    iframe {
+        max-width: 100%;
+    }
+
+    @include respond(phone) {
+        igrame {
+            aspect-ratio: 342/390;
+        }
+    }
+}
+
+
+//丸付きリスト
+.c-circle-list {
+    >li {
+        &::before {
+            content: "●";
+            margin-right: 0.8em;
+            color: var(--bullet-color);
+        }
+
+        padding-left: 1.8em;
+        text-indent: -1.8em;
+    }
+}
+
+// 価格表
+.c-price-table{
+    border-collapse: collapse !important;
+    border-spacing: 0;
+    th,td{
+        padding-left: 1em;
+        vertical-align: middle;
+        border-top: solid 1px #999999;
+        border-bottom: solid 1px #999999;
+        border-right: none;
+        border-left: none;
+    }
+    th,td{
+        &:first-child{
+            width: 53%;
+        }
+    }
+    thead{
+        background-color: $color-primary;
+        color: $color-white;
+        font-weight: 700;
+        font-size: rem(15);
+
+        tr{
+            height: rem(35);
+        }
+
+        th:first-child{
+            letter-spacing: 1em;
+        }
+    }
+    tbody{
+        font-size: rem(15);
+        color: $color-text;
+        font-weight: 600;
+
+        tr{
+            height: rem(33);
+
+            &:nth-child(odd){
+                background-color: $color-white;
+            }
+            &:nth-child(even){
+                background-color: #E3DED7;
+            }
+        }
+
+        td:nth-child(2){
+            padding-left: 3em;
+        }
+    }
+
+    @include respond(phone){
+        width: 100%;
+        max-width: 400px;
+        th,td{
+            padding-inline: 0.5em;
+            &:first-child{
+                width: 55%;
+            }
+            &:last-child{
+                text-align: center;
+                width: 45%;
+            }
+        }
+        thead{
+            background-color: $color-primary;
+            color: $color-white;
+            font-weight: 700;
+            font-size: rem(14);
+    
+            tr{
+                height: rem(35);
+            }
+    
+            th:first-child{
+                letter-spacing: 1em;
+            }
+        }
+        tbody{
+            font-size: rem(14);
+            color: $color-text;
+            font-weight: 600;
+    
+            tr{
+                height: rem(33);
+    
+                &:nth-child(odd){
+                    background-color: $color-white;
+                }
+                &:nth-child(even){
+                    background-color: #E3DED7;
+                }
+            }
+    
+            td:nth-child(2){
+                padding-left: 0em;
+                text-align: center;
+            }
+        }
+    }
+}
+
+// ラベル付き画像
+.c-image-width-label{
+    &__label{
+        font-size: rem(22);
+        font-weight: 700;
+        border-radius: 50%;
+        width: 53px;
+        aspect-ratio: 1/1;
+        background-color: $color-primary-dark;
+        color: $color-white;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        position: relative;
+        z-index: 10;
+        margin-left: 9px;
+    }
+    &__img{
+        border-radius: 16px;
+        margin-top: -27px;
+        position: relative;
+        z-index: 0;
+        aspect-ratio: 242/295;
+        object-fit: cover;
+    }
+}
+
+.c-recruit-list{
+
+    &__row{
+        display: flex;
+
+        dt,dd{
+            font-size: rem(15);
+            font-weight: 400;
+            line-height: 1.8;
+        }
+    
+        dt{
+            width: 4.2em;
+            text-align-last: justify;
+            font-weight: 400;
+            margin-right: 2em;
+            flex-shrink: 0;
+        }
+    }
+
+    &__nonavailable{
+        font-size: rem(15);
+        line-height: 2.2;
+    }
+}

@@ -1,0 +1,43 @@
+@use "variables" as *;
+@use "mixins" as *;
+
+*,
+*::after,
+*::before {
+    margin: 0;
+    padding: 0;
+    box-sizing: inherit;
+}
+
+html{
+    scroll-behavior: smooth;
+    scroll-padding-top: var(--header-height); 
+}
+
+body {
+    box-sizing: border-box;
+    background-color: $color-white !important;
+}
+
+a {
+    transition: all .3s;
+
+    &:hover {
+        opacity: .7;
+    }
+}
+
+figure{
+    line-height: 1;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+}
+
+::selection {
+    background-color: $color-primary;
+    color: $color-white;
+}
+

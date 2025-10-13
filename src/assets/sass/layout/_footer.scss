@@ -1,0 +1,120 @@
+@use "../foundation/variables" as *;
+@use "../foundation/mixins" as *;
+
+.l-footer {
+    padding-top: 69px;
+    padding-bottom: 71px;
+
+    &__logo{
+        text-align: center;
+        margin-bottom: 43px;
+
+        img{
+            width: 456px;
+        }
+    }
+
+    &__contact{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 32px;
+        font-size: $font-medium;
+        letter-spacing: 0.1em;
+        color: $color-text-gray;
+        margin-bottom: 47px;
+
+        &-tel{
+            display: flex;
+            align-items: center;
+            gap: 9px;
+
+            img{
+                width: 23px;
+            }
+        }
+    }
+
+    &__nav{
+        margin-inline: auto;
+        margin-bottom: 32px;
+        &-list{
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-wrap: wrap;
+            list-style-type: none !important;
+        }
+
+        &-item{
+            font-size: rem(16);
+            letter-spacing: 0.06em;
+            >a{
+                color: $color-primary !important;
+            }
+            &:not(:last-child){
+                &::after{
+                    content: "|";
+                    padding-inline: 1em;
+                    color: $color-primary;
+                }
+            }
+        }
+    }
+
+    &__copy{
+        color: $color-primary;
+        text-align: center;
+        font-size: rem(14);
+    }
+
+    @include respond(tab-land){
+        &__nav{
+            &-item{
+                font-size: rem(15);
+            }
+        }
+    }
+
+    @include respond(tab-port){
+        &__nav{
+            max-width: 680px;
+            &-item{
+                &:nth-child(5){
+                    &::after{
+                        content: none;
+                    }
+                }
+            }
+        }
+    }
+
+    @include respond(phone){
+        padding-top: 58px;
+        padding-bottom: 39px;
+    
+        &__logo{
+            margin-bottom: 49px;
+    
+            img{
+                width: 100%;
+            }
+        }
+    
+        &__contact{
+            flex-direction: column;
+            line-height: 1;
+            gap: 14px;
+            margin-bottom: 27px;
+    
+            &-tel{
+                gap: 8.4px;
+            }
+        }
+    
+        &__nav{
+            display: none;
+        }
+    }
+
+}

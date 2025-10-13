@@ -1,0 +1,48 @@
+{
+  "site": {
+    "name": "SAMPLE SITE",
+    "rootUrl": "https://sample.jp/"
+  },
+  "pages": {
+    "home": {
+      "path": "/",
+      "title": "トップページ",
+      "description": "トップページの説明文",
+      "keywords": "キーワード1, キーワード2",
+      "ogp": {
+        "type": "website",
+        "image": "/images/ogp/home.jpg"
+      }
+    },
+    "information": {
+      "path": "/information/",
+      "title": "お知らせ",
+      "description": "ページの説明文",
+      "keywords": "キーワード1, キーワード2",
+      "ogp": {
+        "type": "article",
+        "image": "/images/ogp/about.jpg"
+      }
+    },
+    "privacy": {
+      "path": "/privacy-policy/",
+      "title": "プライバシーポリシー",
+      "description": "ページの説明文",
+      "keywords": "キーワード1, キーワード2",
+      "ogp": {
+        "type": "article",
+        "image": "/images/ogp/privacy-policy.jpg"
+      }
+    },
+    "company": {
+      "path": "/company/",
+      "title": "会社概要",
+      "description": "ページの説明文",
+      "keywords": "キーワード1, キーワード2",
+      "ogp": {
+        "type": "article",
+        "image": "/images/ogp/company.jpg"
+      }
+    }
+  }
+}

@@ -1,0 +1,39 @@
+@use "../foundation/variables" as *;
+@use "../foundation/mixins" as *;
+
+
+.u-pc{
+
+    @include respond(phone){
+        display: none;
+    }
+}
+
+.u-sp{
+    display: none;
+
+    @include respond(phone){
+        display: block;
+    }
+}
+
+.u-narrow{
+    letter-spacing: -0.03em;
+}
+
+.u-align-center{
+    text-align: center;
+}
+
+.u-fitcontent{
+
+    @media screen and (max-width: 781px){
+        width: fit-content;
+        padding-right: 3em;
+    }
+
+}
+
+.u-nowrap{
+    white-space: nowrap;
+}

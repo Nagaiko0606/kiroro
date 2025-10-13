@@ -1,0 +1,102 @@
+@use "../foundation/variables" as *;
+@use "../foundation/mixins" as *;
+
+// タイトル大きく
+.editor-post-title{
+    font-size: 2.3rem;
+    font-weight: 600;
+}
+// ブロックエディタ―のリストスタイルを有効に
+.wp-block-list-item{
+    >*{
+        display: inline-block;
+    }
+}
+ul.wp-block-list{
+    list-style: none;
+    
+    >li{
+        padding-left: 1em;
+        text-indent: -1.5em;
+        &::before{
+            content: "●";
+            margin-right: 0.5em;
+        }
+    }
+
+}
+ol.wp-block-list{
+    list-style: auto;
+
+    >li{
+        margin-right: 0.5em;
+    }
+}
+
+
+:is(ul, ol).is-style-center-triangle,
+:is(ul, ol).is-style-left-triangle,
+:is(ul, ol).is-style-sublist {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    letter-spacing: 0.06em;
+
+    >li {
+        &::before {
+            display: inline-block;
+            font-size: 0.6em;
+            margin-right: 0.5em;
+            vertical-align: middle;
+            transform: translateY(-5%);
+        }
+    }
+}
+
+:is(figure, img, picture).is-style-rounded-image {
+    aspect-ratio: 460/320;
+    border-radius: 30px;
+    overflow: hidden;
+    margin-top: 30px;
+    max-width: 500px;
+    margin-inline: auto;
+
+    img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        object-position: center;
+    }
+
+}
+
+:is(h2, h3, h4).is-style-number-indent {
+    padding-left: 1.2em;
+    text-indent: -1.2em;
+}
+
+.wp-block-group.is-style-sp-column {
+
+    @include respond(phone) {
+        display: flex;
+        flex-direction: column;
+
+        >* {
+            flex-basis: auto;
+        }
+    }
+
+}
+
+.wp-block-group.is-style-sp-column-reverse {
+
+    @include respond(phone) {
+        display: flex;
+        flex-direction: column-reverse;
+
+        >* {
+            flex-basis: auto;
+        }
+    }
+
+}

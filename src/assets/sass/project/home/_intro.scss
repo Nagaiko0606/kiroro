@@ -1,0 +1,11 @@
+@use "../../foundation/variables" as *;
+@use "../../foundation/mixins" as *;
+
+.p-intro{
+    
+    @include respond(phone){
+        &__concept{
+            font-size: calc((31/410) * 100vw) !important;
+        }
+    }
+}

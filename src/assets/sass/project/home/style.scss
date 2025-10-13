@@ -1,0 +1,11 @@
+@charset "utf-8";
+
+@use "../../foundation/base";
+@use "../../foundation/mixins";
+@use "../../foundation/variables";
+
+@forward "header";
+@forward "mv";
+@forward "intro";
+@forward "news";
+@forward "blog";

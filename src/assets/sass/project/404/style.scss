@@ -1,0 +1,22 @@
+@charset "utf-8";
+
+@use "../../foundation/base" as *;
+@use "../../foundation/mixins" as *;
+@use "../../foundation/variables" as *;
+
+
+.p-content{
+    background-color: $color-primary;
+    padding-top: 85.6px;
+    padding-bottom: 77px;
+    color: $color-white;
+}
+
+.p-text-large{
+    font-size: $font-xlarge;
+    margin-bottom: 50px;
+}
+
+.p-text{
+    margin-bottom: 100px;
+}

@@ -1,0 +1,13 @@
+@use "../../foundation/variables" as *;
+@use "../../foundation/mixins" as *;
+
+.p-news{
+    padding-top: 88px;
+    padding-bottom: 100px;
+    background-color: $color-primary;
+    color: $color-white;
+
+    &__title{
+        margin-bottom: 72px;
+    }
+}
