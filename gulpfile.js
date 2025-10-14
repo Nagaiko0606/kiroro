@@ -18,12 +18,15 @@ const gulp = require("gulp"),
   concat = require('gulp-concat'),
   browserSync = require("browser-sync"),
   imagemin = require('gulp-imagemin');
-  webp = require('gulp-webp'),
+webp = require('gulp-webp'),
   newer = require('gulp-newer'),
   SRC = PATH + "src/",
   SRC_ASSETS = PATH + "src/assets/",
   DIST = PATH + "dist/",
-  DIST_ASSETS = PATH + "dist/assets/";
+  DIST_ASSETS = PATH + "dist/assets/",
+  THEMES = PATH + "wp/wp-content/themes/asagaya/",
+  THEMES_ASSETS = PATH + "wp/wp-content/themes/asagaya/assets/";
+
 
 /**
  * clean
@@ -31,7 +34,6 @@ const gulp = require("gulp"),
 const clean = () => {
   return del([DIST + '/**/*']);
 }
-
 
 /**
  * sass
@@ -42,6 +44,7 @@ const sassCompile = () => {
       order: 'smacss'
       //  CSSプロパティの順序をSMACSSの規則に従って整理
     }),
+    mqpacker(),
     autoprefixer({
       cascade: false,
       grid: true
@@ -55,9 +58,10 @@ const sassCompile = () => {
       plumber({
         errorHandler: notify.onError('Error:<%= error.message %>')
       }))
-    .pipe(sass({ outputStyle: 'expanded' })) // expanded compressed
+    .pipe(sass({ outputStyle: 'compressed' })) // expanded compressed
     .pipe(postcss(plugin))
     .pipe(gulp.dest(DIST_ASSETS + 'css', { sourcemaps: './' }))
+    .pipe(gulp.dest(THEMES_ASSETS + 'css', { sourcemaps: './' }))
     .pipe(browserSync.stream())//ページ全体をリロードせずにCSSの変更のみを反映
   // .pipe(notify({
   //   message: 'sass compiled',
@@ -92,6 +96,16 @@ const ejsCompile = () => {
 /**
  * js
  */
+// Swiper JS/CSS を vendor にコピー
+function copySwiper() {
+  return gulp.src([
+    'node_modules/swiper/swiper-bundle.min.js',
+    'node_modules/swiper/swiper-bundle.min.css'
+  ])
+    .pipe(plumber())
+    .pipe(gulp.dest(DIST_ASSETS + 'js/vender'))
+}
+
 const jsCompile = () => {
   return gulp.src(SRC_ASSETS + 'js/*.js')
     .pipe(plumber())
@@ -100,15 +114,17 @@ const jsCompile = () => {
     }))
     .pipe(uglify())
     .pipe(gulp.dest(DIST_ASSETS + 'js'))
+    .pipe(gulp.dest(THEMES_ASSETS + 'js'))
     .pipe(browserSync.stream())
     .pipe(notify({
       message: 'js compiled',
       onLast: true
     }))
 }
-const jsVenderCopy = () => {
-  return gulp.src(SRC_ASSETS + 'js/vender/**/*.{js,css}')
+const jsVenderCompile = () => {
+  return gulp.src(SRC_ASSETS + 'js/vender/**/*')
     .pipe(gulp.dest(DIST_ASSETS + 'js/vender'))
+    .pipe(gulp.dest(THEMES_ASSETS + 'js'))
     .pipe(browserSync.stream())
 }
 
@@ -119,6 +135,7 @@ const jsVenderCopy = () => {
 const copy = () => {
   return gulp.src(SRC + '**/*.+(svg|mp4|otf|ttf|woff|eot|pdf|xlsx|ico)', { encoding: false })
     .pipe(gulp.dest(DIST))
+    .pipe(gulp.dest(THEMES))
     .pipe(browserSync.stream())
   // .pipe(notify({
   //   message: 'copy compiled',
@@ -141,6 +158,7 @@ const imageMinify = () => {
       imagemin.optipng({ optimizationLevel: 5 })
     ]))
     .pipe(gulp.dest(DIST))
+    .pipe(gulp.dest(THEMES))
     .pipe(browserSync.stream())
 }
 
@@ -154,15 +172,7 @@ const webpCompile = () => {
       method: 5,
     }))
     .pipe(gulp.dest(DIST))
-}
-
-/**
- * DIST_ASSETS 内のファイルを wp-content/themes/twentytwentyone_child/assets にコピー
- */
-const copyToTheme = () => {
-  return gulp.src([DIST_ASSETS + '**/*', '!' + DIST_ASSETS + 'images/**'])
-    .pipe(gulp.dest('wp/wp-content/themes/sakurashinmachi-animal-medical-center/assets'))
-    .pipe(browserSync.stream()) // ブラウザの同期を保持
+    .pipe(gulp.dest(THEMES))
 }
 
 /**
@@ -173,7 +183,6 @@ const browserSyncFunc = () => {
 }
 
 const browserSyncOption = {
-  // proxy: 'http://localhost:8000',
   server: DIST,
   reloadDelay: 100
 }
@@ -195,11 +204,10 @@ const watchFiles = () => {
   gulp.watch(SRC_ASSETS + 'sass/**/*.scss', gulp.series(sassCompile))
   gulp.watch(SRC + '**/*.ejs', gulp.series(ejsCompile, browserSyncReload))
   gulp.watch(SRC_ASSETS + 'js/*.js', gulp.series(jsCompile, browserSyncReload))
-  gulp.watch(SRC_ASSETS + 'js/vender/*.js', gulp.series(jsVenderCopy, browserSyncReload))
+  gulp.watch(SRC_ASSETS + 'js/vender/*.js', gulp.series(jsVenderCompile, browserSyncReload))
   gulp.watch(SRC + '**/*.+(svg|mp4|otf|ttf|woff|eot|pdf|xlsx|ico)', gulp.series(copy, browserSyncReload))
   gulp.watch(SRC + '**/*.+(jpg|jpeg|png)', gulp.series(webpCompile, browserSyncReload));
   gulp.watch(SRC + '**/*.+(jpg|jpeg|png|gif)', gulp.series(imageMinify, browserSyncReload));
-  gulp.watch(DIST_ASSETS + '**/*', gulp.series(copyToTheme, browserSyncReload));
 }
 
 
@@ -208,8 +216,9 @@ const watchFiles = () => {
  * parallelは並列で実行
  */
 exports.default = gulp.series(
-  gulp.parallel(sassCompile, ejsCompile, jsCompile, jsVenderCopy, copy),
-  gulp.parallel(copyToTheme, watchFiles, browserSyncFunc)
+  copySwiper,
+  gulp.parallel(sassCompile, ejsCompile, jsCompile, jsVenderCompile, copy),
+  gulp.parallel(watchFiles, browserSyncFunc)
 );
 
 
@@ -234,7 +243,7 @@ exports.ejs = gulp.series(
 );
 // $ gulp jsで個別にタスクを実行
 exports.js = gulp.series(
-  gulp.parallel(jsCompile, jsVenderCopy),
+  gulp.parallel(jsCompile, jsVenderCompile),
 );
 // $ gulp copyで個別にタスクを実行
 exports.copy = gulp.series(

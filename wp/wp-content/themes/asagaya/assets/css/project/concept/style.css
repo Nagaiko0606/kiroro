@@ -1,0 +1,119 @@
+@charset "UTF-8";
+:root {
+  --lending-trim: calc((1em - 1lh) / 2);
+}
+
+@supports not (top: 1lh) {
+  :root {
+    --lending-trim: 0;
+  }
+}
+.example {
+  font-size: 1.125rem;
+}
+
+*,
+*::after,
+*::before {
+  box-sizing: inherit;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: var(--header-height);
+}
+
+body {
+  box-sizing: border-box;
+  background-color: #ffffff !important;
+}
+
+a {
+  transition: all 0.3s;
+}
+a:hover {
+  opacity: 0.7;
+}
+
+figure {
+  line-height: 1;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+::-moz-selection {
+  background-color: #799E7C;
+  color: #ffffff;
+}
+
+::selection {
+  background-color: #799E7C;
+  color: #ffffff;
+}
+
+.p-mv {
+  background-image: url(../../../images/concept/mv@2x.jpg);
+}
+
+.p-section-nav {
+  padding-block: 32px;
+  background-color: #D5E3D4;
+}
+.p-section-nav__list {
+  display: flex;
+  -moz-column-gap: 2em;
+  column-gap: 2em;
+  align-items: center;
+  justify-content: center;
+  color: #6E9072;
+  font-weight: 600;
+  font-size: clamp(14px, 0.875rem + (1vw - 3.2px) * 0.204, 16px);
+  letter-spacing: 0.06em;
+}
+.p-section-nav__list > li::before {
+  display: inline-block;
+  margin-right: 0.4em;
+  transform: translateY(-5%);
+  content: "▷";
+  font-size: 0.5em;
+  vertical-align: middle;
+}
+@media only screen and (max-width: 767px) {
+  .p-mv {
+    background-image: url(../../../images/concept/mv-sp@2x.jpg);
+  }
+  .p-section-nav {
+    padding-top: 17px;
+    padding-bottom: 15px;
+  }
+  .p-section-nav__list {
+    display: grid;
+    grid-template-columns: auto;
+    -moz-column-gap: 7.2463768116vw;
+    column-gap: 7.2463768116vw;
+    margin-inline: 1.2077294686%;
+    font-size: min(3.6842105263vw, 14px);
+  }
+  .p-section-nav__list > li:first-child {
+    grid-row: 1/2;
+    grid-column: 1/2;
+  }
+  .p-section-nav__list > li:nth-child(2) {
+    grid-row: 2/3;
+    grid-column: 1/2;
+  }
+  .p-section-nav__list > li:nth-child(3) {
+    grid-row: 1/2;
+    grid-column: 3/4;
+  }
+  .p-section-nav__list > li:last-child {
+    grid-row: 2/2;
+    grid-column: 3/4;
+  }
+}/*# sourceMappingURL=style.css.map */
+/*# sourceMappingURL=style.css.map */

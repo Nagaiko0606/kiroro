@@ -58,11 +58,6 @@ img {
 .p-mv {
   background-image: url(../../../images/blog/mv@2x.jpg);
 }
-@media only screen and (max-width: 767px) {
-  .p-mv {
-    background-image: url(../../../images/blog/mv-sp@2x.jpg);
-  }
-}
 
 .p-content {
   padding-top: 85.6px;
@@ -73,4 +68,10 @@ img {
 
 .p-heading-secondary {
   margin-bottom: calc(74px + var(--lending-trim));
+}
+
+@media only screen and (max-width: 767px) {
+  .p-mv {
+    background-image: url(../../../images/blog/mv-sp@2x.jpg);
+  }
 }/*# sourceMappingURL=style.css.map */

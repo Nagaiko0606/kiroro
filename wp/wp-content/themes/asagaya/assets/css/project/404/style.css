@@ -1,0 +1,73 @@
+:root {
+  --lending-trim: calc((1em - 1lh) / 2);
+}
+
+@supports not (top: 1lh) {
+  :root {
+    --lending-trim: 0;
+  }
+}
+.example {
+  font-size: 1.125rem;
+}
+
+*,
+*::after,
+*::before {
+  box-sizing: inherit;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: var(--header-height);
+}
+
+body {
+  box-sizing: border-box;
+  background-color: #ffffff !important;
+}
+
+a {
+  transition: all 0.3s;
+}
+a:hover {
+  opacity: 0.7;
+}
+
+figure {
+  line-height: 1;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+::-moz-selection {
+  background-color: #799E7C;
+  color: #ffffff;
+}
+
+::selection {
+  background-color: #799E7C;
+  color: #ffffff;
+}
+
+.p-content {
+  padding-top: 85.6px;
+  padding-bottom: 77px;
+  background-color: #799E7C;
+  color: #ffffff;
+}
+
+.p-text-large {
+  margin-bottom: 50px;
+  font-size: clamp(18px, 1.125rem + (1vw - 3.2px) * 0.204, 20px);
+}
+
+.p-text {
+  margin-bottom: 100px;
+}/*# sourceMappingURL=style.css.map */
+/*# sourceMappingURL=style.css.map */

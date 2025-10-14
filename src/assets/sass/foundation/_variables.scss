@@ -1,5 +1,15 @@
-$color-text: #231815;
+$color-text: #1a1a1a;
 $color-text-gray: #4D4D4D;
+$color-orange: #f4a466;
+$color-orange-dark: #c18d6f;
+$color-orange-light: #e6bfab;
+$color-blue: #8caac9;
+$color-blue-dark: #5a7e92;
+$color-blue-light: #8caac9;
+$color-green: #799e7c;
+$color-green-light: #bacdb1;
+$color-pink: #b1788c;
+
 $color-primary-xlight: #F2F2F2;
 $color-primary-light: #D5E3D4;
 $color-primary: #799E7C;
@@ -17,7 +27,7 @@ $color-white: #ffffff;
     --lending-trim: calc((1em - 1lh) / 2);
 }
 
-@supports not (top: 1lh) {
+@supports not (top: 1lh) { 
     :root {
         --lending-trim: 0;
     }
@@ -26,4 +36,4 @@ $font-small: clamp(12px, 0.75rem + ((1vw - 3.2px) * 0.204), 14px);
 $font-medium: clamp(14px, 0.875rem + ((1vw - 3.2px)* 0.204), 16px);
 $font-large: clamp(17px, 1.063rem + ((1vw - 3.2px)* 0.102), 18px);
 $font-xlarge: clamp(18px, 1.125rem + ((1vw - 3.2px)* 0.204), 20px);
-$font-xxlarge: clamp(24px, 1.5rem + ((1vw - 3.2px)* 1.02), 34px);
+$font-xxlarge: clamp(24px, 1.5rem + ((1vw - 3.2px) * 1.633), 40px);

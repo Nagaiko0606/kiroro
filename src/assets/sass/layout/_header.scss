@@ -8,7 +8,7 @@
     width: 100%;
     z-index: 50;
     top: 0;
-    color: $color-white;
+    color: $color-text-gray;
 
     &__inner {
         width: 100%;
@@ -18,8 +18,8 @@
         padding-inline: min(((40/1300)* 100vw), 40px);
     }
 
-    &__left {
-        display: none;
+    &__logo{
+        width: 347px;
     }
 
     &__right {
@@ -65,7 +65,7 @@
                 display: inline-block;
                 width: 33px;
                 height: 33px;
-                background-image: url(../images/icon-tel@2x.png);
+                background-image: url(../images/common/icon-tel-black.svg);
                 background-size: contain;
                 background-repeat: no-repeat;
                 margin-right: 14px;
