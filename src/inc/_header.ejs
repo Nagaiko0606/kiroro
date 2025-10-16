@@ -20,29 +20,33 @@
 </header>
 <!-- ドロワーメニューコンテンツ　-->
 <div class="l-drawerNav-wrapper" id="js-spMenu" aria-hidden="true" aria-label="メニューリスト">
-    <div class="l-drawerNav-wrapper__title">
-        <img src="<%= basePath %>assets/images/drawer_menu.svg" alt="MENU">
+    <div class="l-drawerNav-wrapper__header">
+        <div class="l-drawerNav-wrapper__header-text">Menu</div>
+        <button type="button" class="l-drawerNav-wrapper__close js-menuClose" aria-controls="js-spMenu" aria-expanded="false"
+            aria-label="メニューを閉じる" tabindex="2">×</button>
     </div>
     <nav class="l-drawerNav">
         <ul class="l-drawerNav__list">
-            <li class="l-drawerNav__item">
+            <li class="l-drawerNav__item --green">
                 <a href="<%= basePath %>">トップページ</a>
-                <ul class="l-drawerNav__sublist">
+                <ul class="l-drawerNav__sublist --green">
                     <li class="l-drawerNav__subitem"><a href="#" class="l-drawerNav__sublink">病院概要</a></li>
+                    <li class="l-drawerNav__subitem"><a href="#" class="l-drawerNav__sublink">獣医師勤務表</a></li>
+                    <li class="l-drawerNav__subitem"><a href="#" class="l-drawerNav__sublink">グループ病院紹介</a></li>
                 </ul>
             </li>
-            <li class="l-drawerNav__item">
-                <a href="<%= basePath %>stay">当院のご紹介</a>
-                <ul class="l-drawerNav__sublist">
+            <li class="l-drawerNav__item --blue">
+                <a href="<%= basePath %>stay">当院について</a>
+                <ul class="l-drawerNav__sublist --blue">
                     <li class="l-drawerNav__subitem"><a href="#" class="l-drawerNav__sublink">当院の特徴</a></li>
                     <li class="l-drawerNav__subitem"><a href="#" class="l-drawerNav__sublink">スタッフ紹介</a></li>
                     <li class="l-drawerNav__subitem"><a href="#" class="l-drawerNav__sublink">診療情報・アクセス</a></li>
                     <li class="l-drawerNav__subitem"><a href="#" class="l-drawerNav__sublink">施設紹介</a></li>
                 </ul>
             </li>
-            <li class="l-drawerNav__item">
-                <a href="<%= basePath %>foodexperience">診療案内</a>
-                <ul class="l-drawerNav__sublist">
+            <li class="l-drawerNav__item --orange">
+                <a href="<%= basePath %>foodexperience">診療のご案内</a>
+                <ul class="l-drawerNav__sublist --orange">
                     <li class="l-drawerNav__subitem"><a href="#" class="l-drawerNav__sublink">予防医療</a></li>
                     <li class="l-drawerNav__subitem"><a href="#" class="l-drawerNav__sublink">健康診断</a></li>
                     <li class="l-drawerNav__subitem"><a href="#" class="l-drawerNav__sublink">去勢避妊手術</a></li>
@@ -50,28 +54,25 @@
                     <li class="l-drawerNav__subitem"><a href="#" class="l-drawerNav__sublink">セカンドオピニオン</a></li>
                 </ul>
             </li>
-            <li class="l-drawerNav__item">
-                <a href="<%= basePath %>system">ペットホテル</a>
-            </li>
-            <li class="l-drawerNav__item">
+            <li class="l-drawerNav__item --pink">
                 <a href="<%= basePath %>koyaruzawa">お知らせ</a>
-            </li>
-            <li class="l-drawerNav__item">
-                <a href="<%= basePath %>into-nature">スタッフブログ</a>
-            </li>
-            <li class="l-drawerNav__item">
-                <a href="<%= basePath %>into-nature">求人情報</a>
             </li>
         </ul>
 
     </nav>
     <div class="l-drawerNav-wrapper__bottom">
-        <img src="<%= basePath %>assets/images/drawer_text.svg" class="l-drawerNav-wrapper__open" alt="予約不要・土日診察可能" width="188" height="16">
-        <img src="<%= basePath %>assets/images/drawer_logo.svg" class="l-drawerNav-wrapper__logo" alt="桜新町動物医療センター" width="219" height="54">
+        <p class="l-drawerNav-wrapper__note">当院は予約優先制です。<br>
+            お電話か予約ページから<br>
+            ご予約ください。</p>
         <div class="l-drawerNav-wrapper__tel">
-            <img src="<%= basePath %>assets/images/icon-tel@2x.png" alt="電話番号" width="34" height="34">
-            03-6413-9982
+            <img src="<%= basePath %>assets/images/common/icon-tel-blue.svg" alt="電話番号" width="23" height="23">
+            042-659-77799
         </div>
+        <div class="l-drawerNav-wrapper__book">
+            <a href="#" target="_blank" rel="noopener noreferrer"><img src="<%= basePath %>assets/images/common/icon-book-blue.svg" alt="オンライン予約サイトへのリンク" width="29" height="22">
+            オンライン診療予約</a>
+        </div>
+        <img src="<%= basePath %>assets/images/common/logo-secondary.svg" alt="キロロ動物病院" lass="l-drawerNav-wrapper__logo">
     </div>
 </div>
 </div>

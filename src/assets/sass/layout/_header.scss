@@ -2,13 +2,13 @@
 @use "../foundation/mixins" as *;
 
 .l-header {
-    display: none; //トップでのみ表示
     background-color: transparent;
-    position: absolute;
+    position: fixed;
     width: 100%;
     z-index: 50;
     top: 0;
     color: $color-text-gray;
+    background-color: $color-white;
 
     &__inner {
         width: 100%;
@@ -26,11 +26,11 @@
         flex: 0 1 100%;
         display: flex;
         justify-content: flex-end;
-        padding-bottom: 18.37px;
+        padding-bottom: 20px;
     }
 
     &__text {
-        margin-top: 46px;
+        margin-top: 48px;
         font-size: rem(21);
         letter-spacing: 0.1em;
         margin-right: min(calc((54/1300)* 100vw), 54px);
@@ -42,7 +42,7 @@
     }
 
     &__tel {
-        margin-top: 25px;
+        margin-top: 22px;
         margin-right: min(calc((70/1300)* 100vw), 70px);
 
         dt {
@@ -73,40 +73,6 @@
         }
     }
 
-    &.--fixed,
-    &.--sticky {
-        display: block;
-        position: fixed;
-        top: 0;
-        left: 0;
-        right: 0;
-        opacity: 1;
-        visibility: visible;
-        background-color: $color-white;
-
-        .l-header {
-            &__left {
-                display: block;
-                flex: 0 0.5 446px;
-            }
-
-            &__right {
-                color: $color-text-gray;
-            }
-
-            &__tel {
-                dd {
-                    &::before {
-                        background-image: url(../images/icon-tel-b@2x.png);
-                    }
-                }
-            }
-        }
-    }
-
-    &.--sticky:not(.--fixed) {
-        animation: slideDown 0.3s ease-in-out;
-    }
 
     @include respond(tab-land) {
 
@@ -169,65 +135,29 @@
     @include respond(phone) {
 
         &__inner {
-            padding-left: 20px;
-            padding-right: 25px;
-            padding-top: 35px;
-            padding-bottom: 16px;
+            padding-left: sp_vw(28);
+            padding-right: sp_vw(25);
+            padding-block: sp_vw(15);
         }
 
-        &__left {
-            display: none;
-        }
+        &__left{
+            width: sp_vw(249);
+            max-width: 249px;
+            display: block;
+        }    
+
 
         &__right {
-            width: 100%;
-            justify-content: space-between;
+            flex: 0 1 auto;
             padding-bottom: 0px;
         }
 
         &__text {
-            margin-top: 0px;
-            font-size: rem(15);
-            margin-right: 0;
-
-            &-br {
-                display: none;
-            }
+            display: none;
         }
 
         &__tel {
             display: none;
-        }
-
-        &.--sticky,
-        &.--fixed {
-
-            .l-header {
-                &__inner {
-                    padding-top: 16px;
-                }
-
-                &__left {
-                    flex-shrink: 1;
-                    display: block;
-                    visibility: visible;
-                    width: calc((290/414) * 100%);
-
-                    img {
-                        width: 100%;
-                    }
-                }
-
-                &__right {
-                    flex: 0 0 36px;
-                    width: 36px;
-
-                }
-
-                &__text {
-                    display: none;
-                }
-            }
         }
 
     }

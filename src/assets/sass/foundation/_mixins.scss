@@ -20,6 +20,33 @@
     @return ($size / 16) * 1rem;
 }
 
-.example {
-    font-size: rem(18);
+@function font_pc($px) {
+    $viewport: 1282;
+    $base: 16; // ブラウザの基本フォントサイズ
+    $vw: (
+        $px / $viewport) * 100dvw;
+    $rem: $px / $base * 1rem;
+    @return clamp(rem(11), $vw, $rem);
+}
+
+@function font_sp($px) {
+    $viewport: 415;
+    $base: 16;
+    $vw: (
+        $px / $viewport) * 100dvw;
+    @return max($vw, rem(11));
+}
+
+@function pc_vw($px) {
+    $viewport: 1282;
+    $base: 16; // ブラウザの基本フォントサイズ
+    $vw: (
+        $px / $viewport) * 100dvw;
+    $rem: $px / $base * 1rem;
+    @return min($vw, $rem);
+}
+
+@function sp_vw($px) {
+    $viewport: 415;
+    @return ($px / $viewport) * 100dvw;
 }

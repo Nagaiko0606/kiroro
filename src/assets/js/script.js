@@ -2,7 +2,6 @@
 
 document.addEventListener('DOMContentLoaded', () => {
 
-
   // ハンバーガーメニュー
   const hamburger = document.getElementById('js-hamburger');
   const spMenu = document.getElementById('js-spMenu');
@@ -29,18 +28,6 @@ document.addEventListener('DOMContentLoaded', () => {
       spMenuBg.classList.remove('is-active');
     })
   })
-
-  // スクロールダウンヘッダー
-  // window.addEventListener('scroll', function () {
-  //   const header = document.querySelector('.l-header');
-  //   const scrollY = window.scrollY;
-
-  //   if (scrollY >= 100) {
-  //     header.classList.add("--sticky");
-  //   } else {
-  //     header.classList.remove('--sticky');
-  //   }
-  // })
 
   // ヘッダー高さ
   setHeaderHeight();

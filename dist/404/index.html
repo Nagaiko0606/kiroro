@@ -42,29 +42,33 @@
 </header>
 <!-- ドロワーメニューコンテンツ　-->
 <div class="l-drawerNav-wrapper" id="js-spMenu" aria-hidden="true" aria-label="メニューリスト">
-    <div class="l-drawerNav-wrapper__title">
-        <img src="../assets/images/drawer_menu.svg" alt="MENU">
+    <div class="l-drawerNav-wrapper__header">
+        <div class="l-drawerNav-wrapper__header-text">Menu</div>
+        <button type="button" class="l-drawerNav-wrapper__close js-menuClose" aria-controls="js-spMenu" aria-expanded="false"
+            aria-label="メニューを閉じる" tabindex="2">×</button>
     </div>
     <nav class="l-drawerNav">
         <ul class="l-drawerNav__list">
-            <li class="l-drawerNav__item">
+            <li class="l-drawerNav__item --green">
                 <a href="../">トップページ</a>
-                <ul class="l-drawerNav__sublist">
+                <ul class="l-drawerNav__sublist --green">
                     <li class="l-drawerNav__subitem"><a href="#" class="l-drawerNav__sublink">病院概要</a></li>
+                    <li class="l-drawerNav__subitem"><a href="#" class="l-drawerNav__sublink">獣医師勤務表</a></li>
+                    <li class="l-drawerNav__subitem"><a href="#" class="l-drawerNav__sublink">グループ病院紹介</a></li>
                 </ul>
             </li>
-            <li class="l-drawerNav__item">
-                <a href="../stay">当院のご紹介</a>
-                <ul class="l-drawerNav__sublist">
+            <li class="l-drawerNav__item --blue">
+                <a href="../stay">当院について</a>
+                <ul class="l-drawerNav__sublist --blue">
                     <li class="l-drawerNav__subitem"><a href="#" class="l-drawerNav__sublink">当院の特徴</a></li>
                     <li class="l-drawerNav__subitem"><a href="#" class="l-drawerNav__sublink">スタッフ紹介</a></li>
                     <li class="l-drawerNav__subitem"><a href="#" class="l-drawerNav__sublink">診療情報・アクセス</a></li>
                     <li class="l-drawerNav__subitem"><a href="#" class="l-drawerNav__sublink">施設紹介</a></li>
                 </ul>
             </li>
-            <li class="l-drawerNav__item">
-                <a href="../foodexperience">診療案内</a>
-                <ul class="l-drawerNav__sublist">
+            <li class="l-drawerNav__item --orange">
+                <a href="../foodexperience">診療のご案内</a>
+                <ul class="l-drawerNav__sublist --orange">
                     <li class="l-drawerNav__subitem"><a href="#" class="l-drawerNav__sublink">予防医療</a></li>
                     <li class="l-drawerNav__subitem"><a href="#" class="l-drawerNav__sublink">健康診断</a></li>
                     <li class="l-drawerNav__subitem"><a href="#" class="l-drawerNav__sublink">去勢避妊手術</a></li>
@@ -72,28 +76,25 @@
                     <li class="l-drawerNav__subitem"><a href="#" class="l-drawerNav__sublink">セカンドオピニオン</a></li>
                 </ul>
             </li>
-            <li class="l-drawerNav__item">
-                <a href="../system">ペットホテル</a>
-            </li>
-            <li class="l-drawerNav__item">
+            <li class="l-drawerNav__item --pink">
                 <a href="../koyaruzawa">お知らせ</a>
-            </li>
-            <li class="l-drawerNav__item">
-                <a href="../into-nature">スタッフブログ</a>
-            </li>
-            <li class="l-drawerNav__item">
-                <a href="../into-nature">求人情報</a>
             </li>
         </ul>
 
     </nav>
     <div class="l-drawerNav-wrapper__bottom">
-        <img src="../assets/images/drawer_text.svg" class="l-drawerNav-wrapper__open" alt="予約不要・土日診察可能" width="188" height="16">
-        <img src="../assets/images/drawer_logo.svg" class="l-drawerNav-wrapper__logo" alt="桜新町動物医療センター" width="219" height="54">
+        <p class="l-drawerNav-wrapper__note">当院は予約優先制です。<br>
+            お電話か予約ページから<br>
+            ご予約ください。</p>
         <div class="l-drawerNav-wrapper__tel">
-            <img src="../assets/images/icon-tel@2x.png" alt="電話番号" width="34" height="34">
-            03-6413-9982
+            <img src="../assets/images/common/icon-tel-blue.svg" alt="電話番号" width="23" height="23">
+            042-659-77799
         </div>
+        <div class="l-drawerNav-wrapper__book">
+            <a href="#" target="_blank" rel="noopener noreferrer"><img src="../assets/images/common/icon-book-blue.svg" alt="オンライン予約サイトへのリンク" width="29" height="22">
+            オンライン診療予約</a>
+        </div>
+        <img src="../assets/images/common/logo-secondary.svg" alt="キロロ動物病院" lass="l-drawerNav-wrapper__logo">
     </div>
 </div>
 </div>
@@ -122,58 +123,53 @@
     </main>
 
     <footer class="l-footer">
-    <div class="l-container">
-        <div class="l-footer__logo">
-            <a href="../">
-                <picture>
-                    <source
-                        srcset="../assets/images/footer-logo.webp 456w, ../assets/images/footer-logo@2x.webp 912w"
-                        type="image/webp" sizes="(max-width : 767px) 83vw, 456px">
-                    <!-- 768px以上でWebP非対応ブラウザの場合 -->
-                    <img srcset="../assets/images/footer-logo.jpg 456w, ../assets/images/footer-logo@2x.jpg 912w"
-                        src="../assets/images/footer-logo.png" alt="新桜町動物医療センター"
-                        sizes="(max-width : 767px) 83vw, 456px" width="447" height="54">
-                </picture>
-            </a>
+    <div class="l-footer__inner">
+        <div class="l-footer__left">
+            <div class="l-footer__info">
+                <span class="l-footer__info-ja">
+                    <img src="../assets/images/common/logo.svg" alt="キロロ動物病院">
+                </span>
+                <span class="l-footer__info-en">
+                    <img src="../assets/images/common/logo-en.svg" alt="KIRORO ANIMAL HOSPITAL">
+                </span>
+                <span class="l-footer__info-group">&copy; Mid Tokyo Holdings Ltd.</span>
+            </div>
+            <nav class="l-footer__nav">
+                <ul class="l-footer__nav-list">
+                    <li class="l-footer__nav-item">
+                        <a href="/" class="l-footer__nav-link">トップページ</a>
+                    </li>
+                    <li class="l-footer__nav-item">
+                        <a href="/feature/" class="l-footer__nav-link">当院について</a>
+                    </li>
+                    <li class="l-footer__nav-item">
+                        <a href="/information/" class="l-footer__nav-link">診療のご案内</a>
+                    </li>
+                    <li class="l-footer__nav-item">
+                        <a href="/staff/" class="l-footer__nav-link">お知らせ</a>
+                    </li>
+                </ul>
+            </nav>
         </div>
-        <address class="l-footer__contact">
-            <span class="l-footer__contact-address">〒154-0014 東京都世田谷区新町2-25-16</span>
-            <span class="l-footer__contact-tel">
-                <img src="../assets/images/icon-tel-b@2x.png" alt="電話" width="34" height="34">
-                03-6413-9982
-            </span>
-        </address>
-        <nav class="l-footer__nav">
-            <ul class="l-footer__nav-list">
-                <li class="l-footer__nav-item">
-                    <a href="../">トップページ</a>
-                </li>
-                <li class="l-footer__nav-item">
-                    <a href="../stay">当院のご紹介</a>
-                </li>
-                <li class="l-footer__nav-item">
-                    <a href="../foodexperience">診療案内</a>
-                </li>
-                <li class="l-footer__nav-item">
-                    <a href="../system">ペットホテル</a>
-                </li>
-                <li class="l-footer__nav-item">
-                    <a href="../koyaruzawa">お知らせ</a>
-                </li>
-                <li class="l-footer__nav-item">
-                    <a href="../into-nature">スタッフブログ</a>
-                </li>
-                <li class="l-footer__nav-item">
-                    <a href="../into-nature">求人情報</a>
-                </li>
-            </ul>
-        </nav>
-        <div class="l-footer__copy">
-            © Sakurashinmachi  Animal Medical Center
+        <div class="l-footer__right">
+            <div class="l-footer__contact">
+                <div class="l-footer__phone">
+                    <span class="l-footer__phone-text">予約・お問い合わせ</span>
+                    <a href="tel:03-3330-3020" class="l-footer__phone-link">
+                        <img src="../assets/images/common/icon-tel-black.svg" alt="電話番号">03-3330-3020</a>
+                </div>
+                <div class="l-footer__book">
+                    <a href="#" class="l-footer__book-link" target="_blank" rel="noopener noreferrer">
+                        <img src="../assets/images/common/icon-book-black.svg" alt="">オンライン診療予約</a>
+                </div>
+            </div>
+            <div class="l-footer__group-logo">
+                <img src="../assets/images/common/logo-hachioji-animal-group.svg" alt="HACHIOJI ANIMAL GROUP Since 1998">
+            </div>
         </div>
+
     </div>
 </footer>
-<script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
-<script src="../assets/js/vender/lightbox/js/lightbox.min.js"></script>
+
 <script src="../assets/js/script.js"></script>
 </body>

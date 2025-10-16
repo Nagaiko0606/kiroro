@@ -2,119 +2,208 @@
 @use "../foundation/mixins" as *;
 
 .l-footer {
-    padding-top: 69px;
-    padding-bottom: 71px;
+    background-color: var(--color-white);
+    padding-block: pc_vw(40);
 
-    &__logo{
-        text-align: center;
-        margin-bottom: 43px;
+    &.--border{
+        border-top: 1px solid #999999;
+    }
 
-        img{
-            width: 456px;
+    &__inner {
+        // max-width: 1425px;
+        width: 100%;
+        margin-inline: auto;
+        padding-left: pc_vw(73);
+        padding-right: pc_vw(57);
+        display: flex;
+        justify-content: space-between;
+    }
+
+    &__info {
+        margin-bottom: pc_vw(30);
+
+        >* {
+            display: block;
         }
+
+        &-ja {
+            width: 208px;
+            margin-bottom:10px;
+
+            img {
+                display: block;
+            }
+        }
+
+        &-en {
+            width: 179px;
+            margin-bottom: 10px;
+
+            img {
+                display: block;
+            }
+        }
+
+        &-group {
+            font-size: rem(14);
+            letter-spacing: 0.02em;
+            line-height: 1;
+            color: $color-blue-dark;
+            margin-bottom: 28px;
+        }
+    }
+
+    &__nav {
+        &-item {
+            font-size: rem(16);
+            line-height: 1.5;
+            letter-spacing: 0.02em;
+            color: #333333;
+
+            &:not(:last-child){
+                margin-bottom: calc(12px + var(--lending-trim));
+            }
+        }
+    }
+
+    &__right{
+        color: #333333;
+        display: flex;
+        flex-direction: column;
     }
 
     &__contact{
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        gap: 32px;
-        font-size: $font-medium;
-        letter-spacing: 0.1em;
-        color: $color-text-gray;
-        margin-bottom: 47px;
-
-        &-tel{
-            display: flex;
-            align-items: center;
-            gap: 9px;
-
-            img{
-                width: 23px;
-            }
-        }
+        padding-right: 8px;
     }
 
-    &__nav{
-        margin-inline: auto;
-        margin-bottom: 32px;
-        &-list{
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            flex-wrap: wrap;
-            list-style-type: none !important;
-        }
+    &__phone {
+        margin-bottom: 9px;
 
-        &-item{
+        &-text {
             font-size: rem(16);
-            letter-spacing: 0.06em;
-            >a{
-                color: $color-primary !important;
-            }
-            &:not(:last-child){
-                &::after{
-                    content: "|";
-                    padding-inline: 1em;
-                    color: $color-primary;
-                }
-            }
-        }
-    }
-
-    &__copy{
-        color: $color-primary;
-        text-align: center;
-        font-size: rem(14);
-    }
-
-    @include respond(tab-land){
-        &__nav{
-            &-item{
-                font-size: rem(15);
-            }
-        }
-    }
-
-    @include respond(tab-port){
-        &__nav{
-            max-width: 680px;
-            &-item{
-                &:nth-child(5){
-                    &::after{
-                        content: none;
-                    }
-                }
-            }
-        }
-    }
-
-    @include respond(phone){
-        padding-top: 58px;
-        padding-bottom: 39px;
-    
-        &__logo{
-            margin-bottom: 49px;
-    
-            img{
-                width: 100%;
-            }
-        }
-    
-        &__contact{
-            flex-direction: column;
             line-height: 1;
-            gap: 14px;
-            margin-bottom: 27px;
-    
-            &-tel{
-                gap: 8.4px;
+            letter-spacing: 0.02em;
+            margin-bottom: 10px;
+        }
+
+        &-link {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            font-size: rem(20);
+            line-height: 1;
+            letter-spacing: 0.04em;
+            font-weight: 500;
+
+            img {
+                width: 26px;
+                height: auto;
             }
         }
-    
-        &__nav{
-            display: none;
+    }
+
+    &__book {
+        margin-bottom: 34px;
+
+        &-link {
+            display: flex;
+            align-items: center;
+            gap: 5px;
+            font-size: rem(18);
+            line-height: 1;
+            letter-spacing: 0.1em;
+            font-weight: 500;
+            padding-left: 3px;
+
+            img {
+                width: 32px;
+                height: auto;
+            }
         }
+    }
+
+    &__group-logo {
+        text-align: right;
+        img{
+            width: 103px;
+        }
+    }
+
+    @include respond(phone) {
+        padding-top: sp_vw(27);
+        padding-bottom: sp_vw(35);
+
+        &__info {
+            margin-bottom: sp_vw(25);
+
+            &-ja {
+                width: sp_vw(167);
+                margin-bottom: sp_vw(10);
+            }
+
+            &-en {
+                width: sp_vw(143);
+                margin-bottom: sp_vw(10);
+            }
+
+            &-group {
+                font-size: font_sp(11);
+            }
+        }
+
+        &__nav {
+            &-item {
+                font-size: font_sp(12);
+
+                &:not(:last-child){
+                    margin-bottom: 1em;
+                }
+            }
+        }
+
+        &__right{
+            flex-direction: column-reverse;
+            justify-content: space-between;
+        }
+
+        &__phone {
+            margin-bottom: sp_vw(6);
+
+            &-text {
+                font-size: font_sp(11);
+                margin-bottom: sp_vw(11);
+            }
+
+            &-link {
+                gap: sp_vw(9);
+                font-size: font_sp(14);
+
+                img {
+                    width: sp_vw(23);
+                }
+            }
+        }
+
+        &__book {
+            margin-bottom: 0;
+
+            &-link {
+                gap: sp_vw(3);
+                font-size: font_sp(12);
+                padding-left: sp_vw(3);
+
+                img {
+                    width: sp_vw(23);
+                }
+            }
+        }
+
+        &__group-logo {
+            img{
+                width: sp_vw(77);
+            }
+        }
+
     }
 
 }
