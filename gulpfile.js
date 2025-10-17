@@ -24,8 +24,8 @@ webp = require('gulp-webp'),
   SRC_ASSETS = PATH + "src/assets/",
   DIST = PATH + "dist/",
   DIST_ASSETS = PATH + "dist/assets/",
-  THEMES = PATH + "wp/wp-content/themes/asagaya/",
-  THEMES_ASSETS = PATH + "wp/wp-content/themes/asagaya/assets/";
+  THEMES = PATH + "wp/wp-content/themes/kiroro/",
+  THEMES_ASSETS = PATH + "wp/wp-content/themes/kiroro/assets/";
 
 
 /**

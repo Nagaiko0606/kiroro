@@ -8,10 +8,6 @@
     --lending-trim: 0;
   }
 }
-.example {
-  font-size: 1.125rem;
-}
-
 *,
 *::after,
 *::before {
@@ -59,11 +55,6 @@ img {
 .p-mv {
   background-image: url(../../../images/concept/mv@2x.jpg);
 }
-@media only screen and (max-width: 767px) {
-  .p-mv {
-    background-image: url(../../../images/concept/mv-sp@2x.jpg);
-  }
-}
 
 .p-section-nav {
   padding-block: 32px;
@@ -89,6 +80,9 @@ img {
   vertical-align: middle;
 }
 @media only screen and (max-width: 767px) {
+  .p-mv {
+    background-image: url(../../../images/concept/mv-sp@2x.jpg);
+  }
   .p-section-nav {
     padding-top: 17px;
     padding-bottom: 15px;
@@ -118,3 +112,4 @@ img {
     grid-column: 3/4;
   }
 }/*# sourceMappingURL=style.css.map */
+/*# sourceMappingURL=style.css.map */

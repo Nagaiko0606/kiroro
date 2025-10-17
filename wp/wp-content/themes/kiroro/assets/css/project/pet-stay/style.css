@@ -7,10 +7,6 @@
     --lending-trim: 0;
   }
 }
-.example {
-  font-size: 1.125rem;
-}
-
 *,
 *::after,
 *::before {
@@ -58,8 +54,10 @@ img {
 .p-mv {
   background-image: url(../../../images/pet-stay/mv@2x.jpg);
 }
+
 @media only screen and (max-width: 767px) {
   .p-mv {
     background-image: url(../../../images/pet-stay/mv-sp@2x.jpg);
   }
 }/*# sourceMappingURL=style.css.map */
+/*# sourceMappingURL=style.css.map */

@@ -62,6 +62,12 @@ function mytheme_enqueue_assets()
             array('common-style'),
             filemtime(get_theme_file_path('/assets/css/project/home/style.css'))
         );
+        wp_enqueue_style(
+            'mytheme-group-map-style',
+            get_template_directory_uri() . '/assets/css/group-map.css',
+            array('common-style'),
+            filemtime(get_theme_file_path('/assets/css/group-map.css'))
+        );
     }
     // お知らせページのスタイルを読み込む
     if (is_home() || is_single() && !is_singular('blog')) {
@@ -139,6 +145,25 @@ function mytheme_enqueue_assets()
         filemtime(get_theme_file_path('assets/js/script.js')),
         true,
     );
+    // トップページのみmap.jsを読み込む
+    if (is_front_page()) {
+        wp_enqueue_script(
+            'map-script',
+            get_template_directory_uri() . '/assets/js/map.js',
+            array('custom_script'),
+            filemtime(get_theme_file_path('/assets/js/map.js')),
+            true,
+        );
+
+        // JSにテンプレートディレクトリURIを渡す
+        wp_localize_script(
+            'map-script',
+            'templateDirectory',
+            array(
+                'uri' => get_template_directory_uri(),
+            )
+        );
+    }
 }
 add_action('wp_enqueue_scripts', 'mytheme_enqueue_assets');
 
@@ -251,6 +276,18 @@ function mytheme_register_block_styles()
 }
 add_action('init', 'mytheme_register_block_styles');
 
+// 
+function register_group_map_block() {
+    register_block_type( 'mytheme/group-map', [
+        'render_callback' => 'render_group_map_block',
+    ] );
+}
+add_action( 'init', 'register_group_map_block' );
 
-remove_filter('the_content', 'wpautop');
-remove_filter('the_excerpt', 'wpautop');
+function render_group_map_block( $attributes, $content ) {
+    ob_start();
+    get_template_part( 'blocks/group-map/render' );
+    return ob_get_clean();
+}
+
+add_shortcode( 'group_map', 'render_group_map_block' );

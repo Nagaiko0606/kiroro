@@ -1,0 +1,592 @@
+@use "foundation/variables" as *;
+@use "foundation/mixins" as *;
+
+
+.c-group {
+    container-type: inline-size;
+    width: 100%;
+
+    &__map {
+        position: relative;
+        width: 100%;
+        aspect-ratio: 1045 / 640.467; // 地図画像の縦横比を固定
+        background: url("../images/map/map-pc.jpg") no-repeat center/cover;
+        border: solid 4px var(--color-white);
+
+        &-list {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+        }
+
+        &-item {
+            cursor: pointer;
+            line-height: 0;
+
+            &-img {
+                height: pc_vw(30.9);
+                position: absolute;
+                transform: translate(-50%, -50%);
+            }
+
+            &-pin {
+                width: pc_vw(16.6);
+                position: absolute;
+                transform: translate(-50%, -50%);
+            }
+
+            &.--egota {
+                .c-group__map-item-img {
+                    top: calc((49/640.4) * 100%);
+                    left: calc((190/1045) * 100%);
+                }
+
+                .c-group__map-item-pin {
+                    top: calc((72/640.4) * 100%);
+                    left: calc((307/1045) * 100%);
+
+                }
+            }
+
+            &.--asagaya {
+                .c-group__map-item-img {
+                    top: calc((138/640.4) * 100%);
+                    left: calc((211/1045) * 100%);
+                    transform: translate(0%, -50%);
+                }
+
+                .c-group__map-item-pin {
+                    top: calc((137/640.4) * 100%);
+                    left: calc((201/1045) * 100%);
+                }
+            }
+
+            &.--satellite {
+                .c-group__map-item-img {
+                    top: calc((99/640.4) * 100%);
+                    left: calc((25/1045) * 100%);
+                    transform: translate(0%, -50%);
+                }
+
+                .c-group__map-item-pin {
+                    top: calc((127/640.4) * 100%);
+                    left: calc((192/1045) * 100%);
+                }
+
+            }
+
+            &.--momiji {
+                .c-group__map-item-img {
+                    top: calc((210/640.4) * 100%);
+                    left: calc((273/1045) * 100%);
+                }
+
+                .c-group__map-item-pin {
+                    top: calc((181/640.4) * 100%);
+                    left: calc((360/1045) * 100%);
+                }
+            }
+
+            &.--honkomagome {
+                .c-group__map-item-img {
+                    top: calc((55/640.4) * 100%);
+                    left: calc((680/1045) * 100%);
+                    transform: translate(0%, -50%);
+                }
+
+                .c-group__map-item-pin {
+                    top: calc((51/640.4) * 100%);
+                    left: calc((671/1045) * 100%);
+                }
+            }
+
+            &.--ichigaya {
+                .c-group__map-item-img {
+                    top: calc((215/640.4) * 100%);
+                    left: calc((602/1045) * 100%);
+                    transform: translate(0%, -50%);
+                }
+
+                .c-group__map-item-pin {
+                    top: calc((215/640.4) * 100%);
+                    left: calc((589/1045) * 100%);
+                }
+            }
+
+            &.--mejiro {
+                .c-group__map-item-img {
+                    top: calc((46/640.4) * 100%);
+                    left: calc((500/1045) * 100%);
+                }
+
+                .c-group__map-item-pin {
+                    top: calc((74/640.4) * 100%);
+                    left: calc((434/1045) * 100%);
+                }
+            }
+
+            &.--shinmejiro {
+                .c-group__map-item-img {
+                    top: calc((124/640.4) * 100%);
+                    left: calc((525/1045) * 100%);
+                    transform: translate(0%, -50%);
+                }
+
+                .c-group__map-item-pin {
+                    top: calc((129/640.4) * 100%);
+                    left: calc((514/1045) * 100%);
+                }
+            }
+
+            &.--otakibashi {
+                .c-group__map-item-img {
+                    top: calc((162/640.4) * 100%);
+                    left: calc((470/1045) * 100%);
+                    transform: translate(0%, -50%);
+                }
+
+                .c-group__map-item-pin {
+                    top: calc((163/640.4) * 100%);
+                    left: calc((460/1045) * 100%);
+                }
+            }
+
+            &.--gotokuji {
+                .c-group__map-item-img {
+                    top: calc((358/640.4) * 100%);
+                    left: calc((186/1045) * 100%);
+                }
+
+                .c-group__map-item-pin {
+                    top: calc((385/640.4) * 100%);
+                    left: calc((274/1045) * 100%);
+                }
+            }
+
+            &.--meguro-chuo {
+                .c-group__map-item-img {
+                    top: calc((532/640.4) * 100%);
+                    left: calc((322/1045) * 100%);
+                }
+
+                .c-group__map-item-pin {
+                    top: calc((560/640.4) * 100%);
+                    left: calc((430/1045) * 100%);
+                }
+            }
+
+            &.--setagaya {
+                .c-group__map-item-img {
+                    top: calc((599/640.4) * 100%);
+                    left: calc((255/1045) * 100%);
+                    transform: translate(0%, -50%);
+                }
+
+                .c-group__map-item-pin {
+                    top: calc((599/640.4) * 100%);
+                    left: calc((239/1045) * 100%);
+                }
+            }
+
+            &.--akasaka {
+                .c-group__map-item-img {
+                    top: calc((322/640.4) * 100%);
+                    left: calc((630/1045) * 100%);
+                    transform: translate(0%, -50%);
+                }
+
+                .c-group__map-item-pin {
+                    top: calc((323/640.4) * 100%);
+                    left: calc((619/1045) * 100%);
+                }
+            }
+
+            &.--motoazabu {
+                .c-group__map-item-img {
+                    top: calc((394/640.4) * 100%);
+                    left: calc((620/1045) * 100%);
+                    transform: translate(0%, -50%);
+                }
+
+                .c-group__map-item-pin {
+                    top: calc((394/640.4) * 100%);
+                    left: calc((607/1045) * 100%);
+                }
+            }
+
+            &.--shirokane {
+                .c-group__map-item-img {
+                    top: calc((494/640.4) * 100%);
+                    left: calc((595/1045) * 100%);
+                    transform: translate(0%, -50%);
+                }
+
+                .c-group__map-item-pin {
+                    top: calc((497/640.4) * 100%);
+                    left: calc((580/1045) * 100%);
+                }
+            }
+        }
+
+        @container (max-width: 767px) {
+            aspect-ratio: 355.9/267;
+            background: url("../images/map/map-sp.jpg") no-repeat center/cover;
+            border-width: 2px;
+
+            &-item {
+                &-img {
+                    height: calc((12/355) * 100cqw);
+                }
+
+                &-pin {
+                    width: calc((6.1/355) * 100cqw);
+                }
+
+                &.--egota {
+                    .c-group__map-item-img {
+                        top: calc((16/267.2) * 100%);
+                        left: calc((66/356) * 100%);
+                    }
+
+                    .c-group__map-item-pin {
+                        top: calc((27/267.2) * 100%);
+                        left: calc((119/356) * 100%);
+
+                    }
+                }
+
+                &.--asagaya {
+                    .c-group__map-item-img {
+                        top: calc((52.5/267.2) * 100%);
+                        left: calc((84.5/356) * 100%);
+                    }
+
+                    .c-group__map-item-pin {
+                        top: calc((52.5/267.2) * 100%);
+                        left: calc((80/356) * 100%);
+                    }
+                }
+
+                &.--satellite {
+                    .c-group__map-item-img {
+                        top: calc((39/267.2) * 100%);
+                        left: calc((7.7/356) * 100%);
+                    }
+
+                    .c-group__map-item-pin {
+                        top: calc((48.4/267.2) * 100%);
+                        left: calc((76/356) * 100%);
+                    }
+                }
+
+                &.--momiji {
+                    .c-group__map-item-img {
+                        top: calc((80/267.2) * 100%);
+                        left: calc((105/356) * 100%);
+                    }
+
+                    .c-group__map-item-pin {
+                        top: calc((70/267.2) * 100%);
+                        left: calc((139/356) * 100%);
+                    }
+                }
+
+                &.--honkomagome {
+                    .c-group__map-item-img {
+                        top: calc((19/267.2) * 100%);
+                        left: calc((267/356) * 100%);
+                        transform: translate(0%, -50%);
+                    }
+
+                    .c-group__map-item-pin {
+                        top: calc((19/267.2) * 100%);
+                        left: calc((262/356) * 100%);
+                    }
+                }
+
+                &.--ichigaya {
+                    .c-group__map-item-img {
+                        top: calc((83/267.2) * 100%);
+                        left: calc((234/356) * 100%);
+                        transform: translate(0%, -50%);
+                    }
+
+                    .c-group__map-item-pin {
+                        top: calc((83/267.2) * 100%);
+                        left: calc((229/356) * 100%);
+                    }
+                }
+
+                &.--mejiro {
+                    .c-group__map-item-img {
+                        top: calc((17/267.2) * 100%);
+                        left: calc((189/356) * 100%);
+                    }
+
+                    .c-group__map-item-pin {
+                        top: calc((28/267.2) * 100%);
+                        left: calc((169/356) * 100%);
+                    }
+                }
+
+                &.--shinmejiro {
+                    .c-group__map-item-img {
+                        top: calc((49/267.2) * 100%);
+                        left: calc((202/356) * 100%);
+                        transform: translate(0%, -50%);
+                    }
+
+                    .c-group__map-item-pin {
+                        top: calc((50/267.2) * 100%);
+                        left: calc((198/356) * 100%);
+                    }
+                }
+
+                &.--otakibashi {
+                    .c-group__map-item-img {
+                        top: calc((64/267.2) * 100%);
+                        left: calc((183/356) * 100%);
+                        transform: translate(0%, -50%);
+                    }
+
+                    .c-group__map-item-pin {
+                        top: calc((63/267.2) * 100%);
+                        left: calc((178/356) * 100%);
+                    }
+                }
+
+                &.--gotokuji {
+                    .c-group__map-item-img {
+                        top: calc((138/267.2) * 100%);
+                        left: calc((70/356) * 100%);
+                    }
+
+                    .c-group__map-item-pin {
+                        top: calc((151/267.2) * 100%);
+                        left: calc((105/356) * 100%);
+                    }
+                }
+
+                &.--meguro-chuo {
+                    .c-group__map-item-img {
+                        top: calc((217/267.2) * 100%);
+                        left: calc((173/356) * 100%);
+                        transform: translate(0%, -50%);
+                    }
+
+                    .c-group__map-item-pin {
+                        top: calc((217/267.2) * 100%);
+                        left: calc((166/356) * 100%);
+                    }
+                }
+
+                &.--setagaya {
+                    .c-group__map-item-img {
+                        top: calc((232/267.2) * 100%);
+                        left: calc((98/356) * 100%);
+                    }
+
+                    .c-group__map-item-pin {
+                        top: calc((233/267.2) * 100%);
+                        left: calc((92/356) * 100%);
+                    }
+                }
+
+                &.--akasaka {
+                    .c-group__map-item-img {
+                        top: calc((125/267.2) * 100%);
+                        left: calc((242/356) * 100%);
+                    }
+
+                    .c-group__map-item-pin {
+                        top: calc((126/267.2) * 100%);
+                        left: calc((237/356) * 100%);
+                    }
+                }
+
+                &.--motoazabu {
+                    .c-group__map-item-img {
+                        top: calc((153/267.2) * 100%);
+                        left: calc((239/356) * 100%);
+                    }
+
+                    .c-group__map-item-pin {
+                        top: calc((153/267.2) * 100%);
+                        left: calc((236/356) * 100%);
+                    }
+                }
+
+                &.--shirokane {
+                    .c-group__map-item-img {
+                        top: calc((192/267.2) * 100%);
+                        left: calc((229/356) * 100%);
+                    }
+
+                    .c-group__map-item-pin {
+                        top: calc((192/267.2) * 100%);
+                        left: calc((226/356) * 100%);
+                    }
+                }
+            }
+        }
+
+    }
+
+    &__suburbs {
+        background-color: #d9d9d9;
+        border-inline: solid 4px var(--color-white);
+        border-top: none;
+        padding-block: pc_vw(40);
+        padding-inline: pc_vw(57);
+
+        &-title {
+            font-size: var(--font-size-large);
+            letter-spacing: 0.24em;
+            line-height: calc(35/20);
+            margin-bottom: pc_vw(24);
+        }
+
+        &-list {
+            display: flex;
+            flex-direction: column;
+            gap: pc_vw(21);
+        }
+
+        &-item {
+            display: flex;
+            align-items: center;
+            gap: pc_vw(10);
+            justify-content: flex-start;
+            cursor: pointer;
+
+            &::before {
+                content: "";
+                display: inline-block;
+                width: pc_vw(15);
+                height: pc_vw(15);
+                background-image: url("../images/map/map-pin1.svg");
+                background-size: contain;
+                background-repeat: no-repeat;
+                background-position: center;
+            }
+        }
+
+        &-img {
+            height: var(--font-size-medium);
+        }
+    }
+
+    &__detail {
+        background-color: var(--color-gray-light);
+        border: solid 4px #FFF;
+        padding-block: pc_vw(24);
+        padding-inline: pc_vw(40);
+        display: flex;
+        gap: pc_vw(36);
+
+        &-left {
+            flex: 0 1 225px
+        }
+
+        &-right {
+            flex: 0 1 695px;
+        }
+
+        &-title {
+            font-size: var(--font-size-large);
+            letter-spacing: 0.24em;
+            line-height: calc(35/20);
+            margin-bottom: calc(pc_vw(19) + var(--lending-trim));
+        }
+
+        &-text {
+            font-size: var(--font-size-small);
+            letter-spacing: 0.02em;
+            line-height: 2;
+        }
+
+        &-info {
+            font-size: var(--font-size-small);
+            letter-spacing: 0.02em;
+            line-height: 2;
+
+            &-wrapper {
+                display: flex;
+                gap: 1em;
+            }
+
+            &-web {
+                a {
+                    color: #38acb5;
+                }
+            }
+        }
+    }
+
+    @container (max-width: 767px) {
+
+        &__title {
+            margin-bottom: calc((67/355) * 100cqw);
+        }
+
+        &__text {
+            margin-bottom: calc((34/355) * 100cqw);
+        }
+
+        &__suburbs {
+            border-inline: solid 2px var(--color-white);
+            padding-top: calc((18/355) * 100cqw);
+            padding-bottom: calc((21/355) * 100cqw);
+            padding-inline: calc((18/355) * 100cqw);
+
+            &-title {
+                font-size: calc((12/355) * 100cqw);
+                margin-bottom: calc((14/355) * 100cqw);
+            }
+
+            &-list {
+                gap: calc((12/355) * 100cqw);
+            }
+
+            &-item {
+                gap: calc((6/355) * 100cqw);
+
+                &::before {
+                    width: calc((8/355) * 100cqw);
+                    height: calc((8/355) * 100cqw);
+                }
+            }
+
+            &-img {
+                height: calc((9.3/355) * 100cqw);
+            }
+        }
+
+
+        &__detail {
+            border-width: 2px;
+            padding-block: calc((23/355) * 100cqw);
+            padding-inline: calc((21/355) * 100cqw);
+            gap: calc((20/355) * 100cqw);
+            flex-direction: column;
+
+            &-left {
+                flex: 0 1 auto;
+
+                img {
+                    width: 50%;
+                }
+            }
+
+            &-right {
+                flex: 0 1 auto;
+            }
+
+            &-title {
+                margin-bottom: calc((13/355) * 100cqw + var(--lending-trim));
+            }
+        }
+    }
+}
