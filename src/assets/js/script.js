@@ -29,9 +29,19 @@ document.addEventListener('DOMContentLoaded', () => {
     })
   })
 
+  // ヘッダー影の追加
+  scrollHeaderShadow();
+  function scrollHeaderShadow() {
+    const header = document.querySelector('.l-header');
+    if (header) {
+      window.addEventListener('scroll', () => {
+        header.classList.toggle('--shadow', window.scrollY > 0);
+      });
+    }
+  }
+
   // ヘッダー高さ
   setHeaderHeight();
-
   function setHeaderHeight() {
     requestAnimationFrame(() => {
       const header = document.querySelector('.l-header');
@@ -44,37 +54,19 @@ document.addEventListener('DOMContentLoaded', () => {
   setHeaderHeight();
   window.addEventListener('resize', setHeaderHeight);
 
-  // 動画要素の取得
-  const video = document.getElementById("js-bgVideo");
-  const mp4 = document.getElementById("js-source-mp4");
-  const webm = document.getElementById("js-source-webm");
-
-  let currentDevice = "";
-
-  if (video) {
-    const themePath = mp4.src.replace(/\/$/, ""); // 最後のスラッシュを削除
-
-    // 動画の切り替え処理
-    function updateVideoSource() {
-      const newDevice = window.innerWidth <= 767 ? "sp" : "pc";
-      const mp4Src = `${themePath}/assets/images/home/video-${newDevice}.mp4`;
-      const webmSrc = `${themePath}/assets/images/home/video-${newDevice}.webm`;
-
-      // デバイスが切り替わった場合のみ動画を変更
-      if (newDevice !== currentDevice) {
-        currentDevice = newDevice;
-        mp4.src = mp4Src;
-        webm.src = webmSrc;
-        video.load(); // 動画を再読み込み
-      }
-    }
-
-    // 初回実行
-    updateVideoSource();
-
-    // 画面リサイズ時に動画を切り替える
-    window.addEventListener("resize", updateVideoSource);
-
-  }
-
+  // スワイパー
+  const swiper = new Swiper('.c-swiper', {
+    autoplay: {
+      delay: 3000,
+      disableOnInteraction: false,
+    },
+    loop: true,
+    slidesPerView: 1,
+    spaceBetween: 0,
+    speed: 1000,
+    effect: 'fade',
+    fadeEffect: {
+      crossFade: true
+    },
+  });
 });

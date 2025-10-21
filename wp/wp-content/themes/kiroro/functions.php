@@ -10,18 +10,6 @@ function mytheme_setup()
 }
 add_action('after_setup_theme', 'mytheme_setup');
 
-
-// head 内にGTMスクリプトを挿入　本番環境のみ
-function add_gtm_head()
-{
-?>
-    <!-- Global site tag (gtag.js) - Google Analytics -->
-
-    <!-- End Google Tag Manager -->
-<?php
-}
-add_action('wp_head', 'add_gtm_head', 0);
-
 function mytheme_enqueue_assets()
 {
     // google fontsの読み込み
@@ -48,6 +36,14 @@ function mytheme_enqueue_assets()
         filemtime(get_theme_file_path('/assets/js/vender/lightbox/css/lightbox.min.css'))
     );
 
+    // swiperのCSSを読み込み
+    wp_enqueue_style(
+        'swiper-style',
+        get_template_directory_uri() . '/assets/js/vender/swiper/swiper-bundle.min.css',
+        array(),
+        filemtime(get_theme_file_path('/assets/js/vender/swiper/swiper-bundle.min.css'))
+    );
+
     wp_enqueue_style(
         'common-style',
         get_template_directory_uri() . '/assets/css/main.css',
@@ -64,9 +60,9 @@ function mytheme_enqueue_assets()
         );
         wp_enqueue_style(
             'mytheme-group-map-style',
-            get_template_directory_uri() . '/assets/css/group-map.css',
+            get_template_directory_uri() . '/assets/group-map/group-map.css',
             array('common-style'),
-            filemtime(get_theme_file_path('/assets/css/group-map.css'))
+            filemtime(get_theme_file_path('/assets/group-map/group-map.css'))
         );
     }
     // お知らせページのスタイルを読み込む
@@ -136,6 +132,15 @@ function mytheme_enqueue_assets()
         filemtime(get_theme_file_path('assets/js/vender/lightbox/js/lightbox.min.js')),
         true,
     );
+    
+    // swiperのJavaScriptを読み込み
+    wp_enqueue_script(
+        'swiper-script',
+        get_template_directory_uri() . '/assets/js/vender/swiper/swiper-bundle.min.js',
+        array('jquery'),
+        filemtime(get_theme_file_path('/assets/js/vender/swiper/swiper-bundle.min.js')),
+        true,
+    );
 
     // 共通JavaScriptファイルの読み込み
     wp_enqueue_script(
@@ -149,9 +154,9 @@ function mytheme_enqueue_assets()
     if (is_front_page()) {
         wp_enqueue_script(
             'map-script',
-            get_template_directory_uri() . '/assets/js/map.js',
+            get_template_directory_uri() . '/assets/group-map/map.js',
             array('custom_script'),
-            filemtime(get_theme_file_path('/assets/js/map.js')),
+            filemtime(get_theme_file_path('/assets/group-map/map.js')),
             true,
         );
 
@@ -276,7 +281,7 @@ function mytheme_register_block_styles()
 }
 add_action('init', 'mytheme_register_block_styles');
 
-// 
+// グループマップブロッグの登録
 function register_group_map_block() {
     register_block_type( 'mytheme/group-map', [
         'render_callback' => 'render_group_map_block',

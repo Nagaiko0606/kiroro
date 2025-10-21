@@ -14,6 +14,7 @@
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
         <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@100..900&display=swap" rel="stylesheet">
         <!-- 共通CSS -->
+        <link href="assets/js/vender/swiper/swiper-bundle.min.css" rel="stylesheet" />
         <link href="assets/js/vender/lightbox/css/lightbox.min.css" rel="stylesheet" />
         <link rel="stylesheet" href="assets/css/main.css">
         <link rel="stylesheet" href="assets/css/project/home/style.css">
@@ -102,22 +103,23 @@
     role="presentation"></div>
 <!-- ドロワーメニュー ends-->
         <main class="l-main">
-            <div class="p-mv">
-                <div class="p-mv__video p-video">
-                    <video id="js-bgVideo" class="p-video__content" autoplay muted loop playsinline>
-                        <source id="js-source-mp4" src="" type="video/mp4">
-                        <source id="js-source-webm" src="" type="video/webm">
-                    </video>
+            <div class="swiper c-swiper">
+                <div class="swiper-wrapper c-swiper__wrapper">
+                    <div class="swiper-slide c-swiper__slide">
+                        <picture>
+                            <source srcset="assets/images/for-editor/mv1-sp@2x-100.jpg" media="(max-width: 767px)">
+                            <img src="assets/images/for-editor/mv1@2x-100.jpg" alt="" class="c-swiper__img">
+                        </picture>
+                    </div>
+                    <div class="swiper-slide c-swiper__slide">
+                        <div class="swiper-slide c-swiper__slide">
+                            <picture>
+                                <source srcset="assets/images/for-editor/mv2-sp@2x-100.jpg" media="(max-width: 767px)">
+                                <img src="assets/images/for-editor/mv2@2x-100.jpg" alt="" class="c-swiper__img">
+                            </picture>
+                        </div>
+                    </div>
                 </div>
-                <h1>
-                    <picture>
-                        <source srcset="assets/images/home/logo-mv.webp 393w, assets/images/home/logo-mv@2x.webp 786w"
-                            type="image/webp" sizes="(max-width: 767px) 65.2vw, 393px">
-                        <img srcset="assets/images/home/logo-mv.jpg 393w, assets/images/home/logo-mv@2x.jpg 786w"
-                            src="assets/images/home/logo-mv.png" alt="桜新町動物医療センター"
-                            sizes="(max-width: 767px) 65.2vw, 393px" width="393" height="570" class="p-mv__logo">
-                    </picture>
-                </h1>
             </div>
             <section class="p-news">
                 <div class="l-container">
@@ -268,8 +270,7 @@
             <div class="l-footer__contact">
                 <div class="l-footer__phone">
                     <span class="l-footer__phone-text">予約・お問い合わせ</span>
-                    <a href="tel:03-3330-3020" class="l-footer__phone-link">
-                        <img src="assets/images/common/icon-tel-black.svg" alt="電話番号">03-3330-3020</a>
+                    <span class="l-footer__phone-number"><img src="assets/images/common/icon-tel-black.svg" alt="電話番号">03-3330-3020</span>
                 </div>
                 <div class="l-footer__book">
                     <a href="#" class="l-footer__book-link" target="_blank" rel="noopener noreferrer">
@@ -277,13 +278,15 @@
                 </div>
             </div>
             <div class="l-footer__group-logo">
-                <img src="assets/images/common/logo-hachioji-animal-group.svg" alt="HACHIOJI ANIMAL GROUP Since 1998">
+                <img src="assets/images/common/logo-hachioji-animal-group.svg"
+                    alt="HACHIOJI ANIMAL GROUP Since 1998">
             </div>
         </div>
 
     </div>
 </footer>
 
+<script src="assets/js/vender/swiper/swiper-bundle.min.js"></script>
 <script src="assets/js/script.js"></script>
 </body>
 

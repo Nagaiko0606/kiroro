@@ -1,19 +1,17 @@
 @use "../foundation/variables" as *;
 @use "../foundation/mixins" as *;
 
-.l-container{
+.l-container {
     width: 94%;
     max-width: 1000px;
     margin: 0 auto;
 
-    @include respond(phone){
+    @include respond(phone) {
         max-width: 550px;
         width: calc((342/414) *100%);
     }
 }
 
-.l-main{
-    &.--underlayer{
-        margin-top: var(--header-height);
-    }
+.l-main {
+    margin-top: var(--header-height);
 }

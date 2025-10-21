@@ -9,22 +9,23 @@
 <body>
     <%- include('inc/_header', { basePath: '' }) %>
         <main class="l-main">
-            <div class="p-mv">
-                <div class="p-mv__video p-video">
-                    <video id="js-bgVideo" class="p-video__content" autoplay muted loop playsinline>
-                        <source id="js-source-mp4" src="" type="video/mp4">
-                        <source id="js-source-webm" src="" type="video/webm">
-                    </video>
+            <div class="swiper c-swiper">
+                <div class="swiper-wrapper c-swiper__wrapper">
+                    <div class="swiper-slide c-swiper__slide">
+                        <picture>
+                            <source srcset="assets/images/for-editor/mv1-sp@2x-100.jpg" media="(max-width: 767px)">
+                            <img src="assets/images/for-editor/mv1@2x-100.jpg" alt="" class="c-swiper__img">
+                        </picture>
+                    </div>
+                    <div class="swiper-slide c-swiper__slide">
+                        <div class="swiper-slide c-swiper__slide">
+                            <picture>
+                                <source srcset="assets/images/for-editor/mv2-sp@2x-100.jpg" media="(max-width: 767px)">
+                                <img src="assets/images/for-editor/mv2@2x-100.jpg" alt="" class="c-swiper__img">
+                            </picture>
+                        </div>
+                    </div>
                 </div>
-                <h1>
-                    <picture>
-                        <source srcset="assets/images/home/logo-mv.webp 393w, assets/images/home/logo-mv@2x.webp 786w"
-                            type="image/webp" sizes="(max-width: 767px) 65.2vw, 393px">
-                        <img srcset="assets/images/home/logo-mv.jpg 393w, assets/images/home/logo-mv@2x.jpg 786w"
-                            src="assets/images/home/logo-mv.png" alt="桜新町動物医療センター"
-                            sizes="(max-width: 767px) 65.2vw, 393px" width="393" height="570" class="p-mv__logo">
-                    </picture>
-                </h1>
             </div>
             <section class="p-news">
                 <div class="l-container">

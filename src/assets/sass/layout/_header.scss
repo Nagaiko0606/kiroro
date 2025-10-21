@@ -18,7 +18,7 @@
         padding-inline: min(((40/1300)* 100vw), 40px);
     }
 
-    &__logo{
+    &__logo {
         width: 347px;
     }
 
@@ -71,6 +71,10 @@
                 margin-right: 14px;
             }
         }
+    }
+
+    &.--shadow {
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
     }
 
 
@@ -140,11 +144,11 @@
             padding-block: sp_vw(15);
         }
 
-        &__left{
+        &__left {
             width: sp_vw(249);
             max-width: 249px;
             display: block;
-        }    
+        }
 
 
         &__right {

@@ -103,7 +103,8 @@ function copySwiper() {
     'node_modules/swiper/swiper-bundle.min.css'
   ])
     .pipe(plumber())
-    .pipe(gulp.dest(DIST_ASSETS + 'js/vender'))
+    .pipe(gulp.dest(DIST_ASSETS + 'js/vender/swiper'))
+    .pipe(gulp.dest(THEMES_ASSETS + 'js/vender/swiper'))
 }
 
 const jsCompile = () => {
