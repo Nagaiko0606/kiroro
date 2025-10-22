@@ -1,0 +1,95 @@
+@charset "UTF-8";
+:root {
+  --lending-trim: calc((1em - 1lh) / 2);
+}
+
+@supports not (top: 1lh) {
+  :root {
+    --lending-trim: 0;
+  }
+}
+.p-section-nav {
+  position: relative;
+  margin-bottom: 9.5900439239vw;
+  padding-top: 37px;
+  padding-bottom: 5px;
+  background-color: #8caac9;
+}
+.p-section-nav::before, .p-section-nav::after {
+  display: inline-block;
+  z-index: 0;
+  position: absolute;
+  width: 100vw;
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  content: "";
+}
+.p-section-nav::before {
+  top: 0;
+  left: 0;
+  height: 17.4231332357vw;
+  transform: translateY(-99%);
+  background-image: url(../../../images/about/section-nav-before.svg);
+}
+.p-section-nav::after {
+  bottom: 0;
+  left: 0;
+  height: 13.616398243vw;
+  transform: translateY(69%);
+  background-image: url(../../../images/about/section-nav-after.svg);
+}
+.p-section-nav__list {
+  display: flex;
+  z-index: 10;
+  position: relative;
+  -moz-column-gap: 2em;
+  column-gap: 2em;
+  align-items: center;
+  justify-content: center;
+  background-color: #8caac9;
+  color: #ffffff;
+  font-weight: 600;
+  font-size: clamp(14px, 0.875rem + (1vw - 3.2px) * 0.204, 16px);
+  letter-spacing: 0.06em;
+}
+.p-section-nav__list > li::before {
+  display: inline-block;
+  margin-right: 0.4em;
+  transform: translateY(-5%);
+  content: "▷";
+  font-size: 0.5em;
+  vertical-align: middle;
+}
+@media only screen and (max-width: 767px) {
+  .p-section-nav {
+    margin-bottom: 12.8019323671vw;
+    padding-top: 11px;
+    padding-bottom: 7px;
+  }
+  .p-section-nav::before {
+    height: 14.0096618357vw;
+    background-image: url(../../../images/about/section-nav-before-sp.svg);
+  }
+  .p-section-nav::after {
+    bottom: 0;
+    left: 0;
+    height: 25.2801932367vw;
+    transform: translateY(55%);
+    background-image: url(../../../images/about/section-nav-after-sp.svg);
+  }
+  .p-section-nav__list {
+    -moz-column-gap: 2em;
+    column-gap: 2em;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    max-width: 17em;
+    margin-inline: auto;
+    font-size: min(3.6842105263vw, 14px);
+  }
+}
+@media screen and (max-width: 615px) {
+  .p-section-nav::after {
+    transform: translateY(45%);
+  }
+}/*# sourceMappingURL=style.css.map */

@@ -1,23 +1,22 @@
 <?php get_header(); ?>
 
-<div class="c-mv p-mv">
-    <div class="c-mv__title">
-        <h1 class="c-mv__title-text">お知らせ</h1>
+<div class="c-page-header --news">
+    <div class="c-page-header__title">
+        <h1 class="c-page-header__title-text">お知らせ</h1>
     </div>
 </div>
 <div class="p-content">
     <div class="l-container">
-        <div class="c-heading-secondary p-heading-secondary">
-            <img src="<?php echo esc_url(get_template_directory_uri()); ?>/assets/images/logo-green.png" alt="" width="137" height="140">
-            <h2 class="c-heading-secondary__text --white">お知らせ一覧</h2>
-        </div>
+        <h2 class="c-section-title --bird3 p-heading-secondary">
+            お知らせ一覧
+        </h2>
         <div class="c-news">
             <?php
             // お知らせカテゴリーの投稿を3件取得
             $news_args = array(
                 'post_type' => 'post',
                 'posts_per_page' => 12,
-                'paged'          => $paged, 
+                'paged'          => $paged,
                 'orderby' => 'date',
                 'order' => 'DESC',
                 'ignore_sticky_posts' => true

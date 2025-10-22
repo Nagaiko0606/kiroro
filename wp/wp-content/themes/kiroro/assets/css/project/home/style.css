@@ -97,6 +97,11 @@ img {
 }
 .p-news__title {
   margin-bottom: 72px;
+  text-align: center;
+}
+.p-news__title-sub {
+  margin-top: 10px;
+  font-size: clamp(17px, 1.063rem + (1vw - 3.2px) * 0.102, 18px);
 }
 
 .p-blog {

@@ -1,50 +1,6 @@
 @use "../foundation/variables" as *;
 @use "../foundation/mixins" as *;
 
-// 下層共通ヘッダー
-
-.c-mv {
-    width: 100%;
-    height: 600px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    background-size: cover;
-    background-position: center;
-
-    &__title {
-        background-color: rgba($color-secondary-dark, 0.6);
-        min-width: 478px;
-        padding-block: 15px;
-        padding-inline: 1em;
-
-        &-text {
-            padding-block: 29px;
-            text-align: center;
-            font-size: rem(38);
-            letter-spacing: 0.2em;
-            color: $color-white;
-            border-block: solid 1px $color-white;
-            line-height: 1;
-        }
-    }
-
-    @include respond(phone) {
-        height: auto;
-        aspect-ratio: 1/1;
-
-        &__title {
-            min-width: 257px;
-            padding-block: 8px;
-
-            &-text {
-                padding-block: 18px;
-                font-size: rem(26);
-            }
-        }
-    }
-}
-
 // ロゴ付h2見出し
 
 .c-heading-secondary {
@@ -523,40 +479,3 @@
     }
 }
 
-// 共通ボタン
-.c-button {
-    display: inline-block;
-    font-size: $font-large;
-    letter-spacing: 0.1em;
-    padding-left: 0.5em;
-    padding-right: 1em;
-    height: 32px;
-    line-height: 32px;
-    font-weight: 700;
-
-    &::before {
-        content: ">";
-        margin-right: 0.1em;
-    }
-
-    &.--primary {
-        background-color: $color-primary;
-        color: $color-white;
-    }
-
-    &.--secondary {
-        background-color: $color-white;
-        color: $color-primary-dark;
-    }
-}
-
-// 背景木目
-
-.c-bg-wood {
-    background-image: url(../images/home/intro_bg@2x.jpg);
-
-    @include respond(phone) {
-        background-image: url(../images/home/intro_bg-sp@2x.jpg);
-    }
-
-}

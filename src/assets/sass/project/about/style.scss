@@ -1,0 +1,96 @@
+@charset "utf-8";
+
+@use "../../foundation/mixins" as *;
+@use "../../foundation/variables" as *;
+
+.p-section-nav{
+    padding-top: 37px;
+    padding-bottom: 5px;
+    position: relative;
+    background-color: $color-blue-light;
+    margin-bottom: calc((131/1366) * 100vw);
+
+    &::before, &::after{
+        content: "";
+        display: inline-block;
+        width: 100vw;
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-position: center;
+        position: absolute;
+        z-index: 0;
+    }
+
+    &::before{
+        height: calc((238/1366) * 100vw);
+        background-image: url(../../../images/about/section-nav-before.svg);
+        top: 0;
+        left: 0;
+        transform: translateY(-99%);
+    }
+    &::after{
+        height: calc((186/1366) * 100vw);
+        background-image: url(../../../images/about/section-nav-after.svg);
+        bottom: 0;
+        left: 0;
+        transform: translateY(69%);
+    }
+
+    &__list{
+        position: relative;
+        z-index: 10;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        color: $color-white;
+        font-size: $font-medium;
+        font-weight: 600;
+        letter-spacing: 0.06em;
+        column-gap: 2em;
+        background-color: $color-blue-light;
+
+        >li {
+            &::before {
+                content: "▷";
+                display: inline-block;
+                font-size: 0.5em;
+                vertical-align: middle;
+                transform: translateY(-5%);
+                margin-right: 0.4em;
+            }
+        }
+    }
+
+    @include respond(phone){
+        padding-top: 11px;
+        padding-bottom: 7px;
+        margin-bottom: calc((53/414) * 100vw);
+
+        &::before{
+            height: calc((58/414) * 100vw);
+            background-image: url(../../../images/about/section-nav-before-sp.svg);
+        }
+        &::after{
+            height: calc((104.66/414) * 100vw);
+            background-image: url(../../../images/about/section-nav-after-sp.svg);
+            bottom: 0;
+            left: 0;
+            transform: translateY(55%);
+        }
+
+        &__list{
+            max-width: 17em;
+            flex-wrap: wrap;
+            justify-content: flex-start;
+            margin-inline: auto;
+            font-size: min(calc((14/380) * 100vw),  14px);
+            column-gap: 2em;
+        }
+    }
+
+    @media screen and (max-width: 615px){
+        &::after{
+            transform: translateY(45%);
+        }
+    }
+}

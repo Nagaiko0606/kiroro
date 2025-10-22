@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <%- include('../inc/_head', { site: site, page: pages.company, basePath: '../' }) %>
+    <link rel="stylesheet" href="../assets/css/project/about/style.css">
+</head>
+
+<body>
+  <%- include('../inc/_header', { basePath: '../' }) %>
+    <main class="l-main">
+      <div class="c-page-header --about">
+        <div class="c-page-header__title">
+          <h1 class="c-page-header__title-text">当院について</h1>
+        </div>
+      </div>
+      <nav aria-label="ページ内ナビゲーション" class="p-section-nav">
+        <div class="l-container">
+          <ul class="p-section-nav__list">
+            <li><a href="#feature">当院の特徴</a></li>
+            <li><a href="#about">スタッフ紹介</a></li>
+            <li><a href="#about">診療情報・アクセス</a></li>
+            <li><a href="#about">施設紹介</a></li>
+          </ul>
+        </div>
+      </nav>
+
+
+
+    </main>
+
+    <%- include('../inc/_footer', { basePath: '../' }) %>
+</body>
+
+</html>

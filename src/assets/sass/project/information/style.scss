@@ -1,0 +1,186 @@
+@charset "utf-8";
+
+@use "../../foundation/mixins" as *;
+@use "../../foundation/variables" as *;
+
+.p-section-nav{
+    background-color: $color-orange-dark;
+    padding-top: 35px;
+    position: relative;
+    margin-bottom: calc((228/1366) * 100vw);
+
+    &__inner{
+        max-width: 844px;
+    }
+ 
+    &::before, &::after{
+        content: "";
+        display: inline-block;
+        width: 100vw;
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-position: center;
+        position: absolute;
+        z-index: 0;
+    }
+
+    &::before{
+        height: calc((128/1366) * 100vw);
+        background-image: url(../../../images/information/section-nav-before.svg);
+        top: 0;
+        left: 0;
+        transform: translateY(-99%);
+    }
+    &::after{
+        height: calc((277/1366) * 100vw);
+        background-image: url(../../../images/information/section-nav-after.svg);
+        bottom: 0;
+        left: 0;
+        transform: translateY(83%);
+    }
+
+
+    &__list{
+        position: relative;
+        z-index: 10;
+        display: grid;
+        grid-template-columns: max-content max-content 1fr;
+        color: $color-white;
+        font-size: $font-medium;
+        font-weight: 600;
+        letter-spacing: 0.06em;
+        column-gap: 1.5em;
+
+        >li {
+            >a::before {
+                content: "▷";
+                display: inline-block;
+                font-size: 0.5em;
+                vertical-align: middle;
+                transform: translateY(-5%);
+                margin-right: 0.4em;
+            }
+
+            &:first-child{
+                grid-column: 1/4;
+            }
+            &:nth-child(2){
+                grid-row: 2/3;
+                grid-column: 1/2;
+            }
+            &:nth-child(3){
+                grid-row: 2/3;
+                grid-column: 2/3;
+            }
+            &:nth-child(4){
+                grid-row: 3/4;
+                grid-column: 1/4;
+            }
+            &:last-child{
+                grid-row: 4/5;
+                grid-column: 1/4;
+            }
+        }
+    }
+
+    &__item-sub{
+        display: grid;
+        grid-template-columns: max-content 1fr;
+    }
+
+    &__sublist{
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        column-gap: 1em;
+
+        >li{
+            &::before {
+                content: ">";
+                font-size: 1em;
+                margin-right: 2px;
+            }
+        }
+    }
+
+    @include respond(phone){
+        padding-top: 17px;
+        margin-bottom: calc((112/414) * 100vw);
+
+        &::before{
+            height: calc((59/414) * 100vw);
+            background-image: url(../../../images/information/section-nav-before-sp.svg);
+        }
+        &::after{
+            height: calc((128/414) * 100vw);
+            background-image: url(../../../images/information/section-nav-after-sp.svg);
+            bottom: 0;
+            left: 0;
+            transform: translateY(87%);
+        }
+
+        &__list{
+            display: flex;
+            flex-wrap: wrap;
+            max-width: 23em;
+            margin-inline: auto;
+            font-size: min(calc((14/380) * 100vw), 14px);
+            column-gap: 1.5em;
+            row-gap: 9px;
+
+
+            >li:first-child{
+                grid-column: 1/2;
+                grid-row: 1/2;
+            }
+            >li:nth-child(2){
+                grid-column: 2/3;
+                grid-row: 1/2;
+            }
+            >li:nth-child(3){
+                grid-column: 1/2;
+                grid-row: 3/4;
+            }
+            >li:nth-child(4){
+                grid-column: 2/3;
+                grid-row: 2/3;
+            }
+            >li:last-child{
+                grid-column: 2/3;
+                grid-row: 1/2;
+            }
+        }
+
+        &__item-sub{
+            >a{
+                display: flex;
+                align-items: center;
+            }
+        }
+
+        &__sublist{
+            display: none;
+        }
+    }
+}
+
+
+// 
+.p-healthcheck__menu{
+    @include respond(tab-port){
+        flex-wrap: wrap !important;
+        row-gap: 50px;
+        align-items: center;
+        justify-content: center;
+        &>div{
+            flex-basis: 47% !important;
+        }
+    }
+
+    @include respond(phone){
+        row-gap: 50px !important;
+        &>div{
+            flex-basis: 100% !important;
+        }
+    }
+}

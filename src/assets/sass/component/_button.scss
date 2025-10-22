@@ -1,0 +1,45 @@
+@use "../foundation/variables" as *;
+@use "../foundation/mixins" as *;
+
+// 共通ボタン
+.c-button {
+    display: inline-block;
+    font-size: $font-large;
+    letter-spacing: 0.1em;
+    padding: 0.5em 1em 0.5em 0.5em;
+    line-height: 1;
+    font-weight: 700;
+    min-width: 294px;
+
+    &::before {
+        content: ">";
+        margin-right: 0.1em;
+    }
+
+    &.--primary {
+        background-color: transparent;
+        color: $color-white;
+        border: 1px solid $color-white;
+    }
+
+    &.--secondary {
+        background-color: #c28953;
+        color: $color-white;
+        position: relative;
+
+        &::after{
+            content: "";
+            display: inline-block;
+            font-size: $font-large;
+            width: calc((107/18) * 1em);
+            height: calc((132/18) * 1em);
+            background-image: url(../images/common/illust-bird1.png);
+            background-size: contain;
+            background-repeat: no-repeat;
+            background-position: center;
+            position: absolute;
+            top: calc((65/18) * -1em);
+            right: calc((31/18) * -1em);
+        }
+    }
+}

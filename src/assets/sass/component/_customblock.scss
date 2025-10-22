@@ -388,3 +388,11 @@
         line-height: 2.2;
     }
 }
+
+// 波線区切り
+.wp-block-lazyblock-wave-divider-up{
+    transform: translateY(1px);
+}
+.wp-block-lazyblock-wave-divider-down{
+    transform: translateY(-1px);
+}

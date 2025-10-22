@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <%- include('inc/_head', { site: site, page: pages.home, basePath: '' }) %>
+        <link rel="stylesheet" href="assets/css/project/home/style.css">
+</head>
+
+
+<body>
+    <%- include('inc/_header', { basePath: '' }) %>
+        <main class="l-main">
+            <dl class="c-info-list">
+                <div class="c-info-list__row">
+                    <dt>名称</dt>
+                    <dd>桜新町動物医療センター<br>（旧 桜新町動物病院）</dd>
+                </div>
+                <div class="c-info-list__row">
+                    <dt>予約</dt>
+                    <dd><span>必要ありません。直接ご来院ください。</span>
+                        ※ペットホテルのみ予約が必要です。</dd>
+                </div>
+            </dl>
+
+            <a href="#" class="c-button --secondary">
+                その他のお知らせ（一覧）
+            </a>
+
+            <h2 class="c-section-title --bird1">
+                当院の特徴
+            </h2>
+            <h2 class="c-section-title --bird2">
+                病院概要
+            </h2>
+            <h2 class="c-section-title --bird3">
+                お知らせ
+            </h2>
+            <h2 class="c-section-title --bird4">
+                グループ病院紹介
+            </h2>
+            <h2 class="c-section-title --bird5">
+                スタッフ紹介
+            </h2>
+            <h2 class="c-section-title --bird6">
+               施設紹介
+            </h2>
+            <h2 class="c-section-title --bird7">
+                予防医療
+             </h2>
+            <h2 class="c-section-title --bird8">
+                診療科紹介
+             </h2>
+        </main>
+        <%- include('inc/_footer', { basePath: '' }) %>
+</body>
+
+</html>

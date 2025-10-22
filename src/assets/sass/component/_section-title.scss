@@ -1,0 +1,86 @@
+@use "../foundation/variables" as *;
+@use "../foundation/mixins" as *;
+
+
+.c-section-title {
+    font-size: $font-xxlarge;
+    letter-spacing: 0.2em;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    line-height: 1.3;
+
+    &::before{
+        content: "";
+        font-size: $font-xxlarge;
+        display: inline-block;
+        background-size: contain;
+        background-repeat: no-repeat;
+        background-position: center;
+        margin-bottom: calc((15px + var(--lending-trim)));
+    }
+
+    &.--bird1{
+        &::before{
+            background-image: url(../images/common/illust-bird1.png);
+            width: calc((107/40) * 1em);
+            height: calc((133/40) * 1em);
+            transform: translateX(-20%);
+            margin-bottom: calc((10px + var(--lending-trim)));
+        }
+    }
+    &.--bird2{
+        &::before{
+            background-image: url(../images/common/illust-bird2.png);
+            width: calc((135/40) * 1em);
+            height: calc((92/40) * 1em);
+        }
+    }
+    &.--bird3{
+        &::before{
+            background-image: url(../images/common/illust-bird3.png);
+            width: calc((129/40) * 1em);
+            height: calc((88/40) * 1em);
+            margin-bottom: calc((15px + var(--lending-trim)));
+            transform: translateX(10%);
+        }
+    }
+    &.--bird4{
+        &::before{
+            background-image: url(../images/common/illust-bird4.png);
+            width: calc((170/40) * 1em);
+            height: calc((99/40) * 1em);
+        }
+    }
+    &.--bird5{
+        &::before{
+            background-image: url(../images/common/illust-bird5.png);
+            width: calc((136/40) * 1em);
+            height: calc((106/40) * 1em);
+
+        }
+    }
+    &.--bird6{
+        &::before{
+            background-image: url(../images/common/illust-bird6.png);
+            width: calc((121/40) * 1em);
+            height: calc((121/40) * 1em);
+        }
+    }
+    &.--bird7{
+        &::before{
+            background-image: url(../images/common/illust-bird7.png);
+            width: calc((137/40) * 1em);
+            height: calc((116/40) * 1em);
+            transform: translateX(10%);
+        }
+    }
+    &.--bird8{
+        &::before{
+            background-image: url(../images/common/illust-bird8.png);
+            width: calc((124/40) * 1em);
+            height: calc((113/40) * 1em);
+            transform: translateX(-5%);
+        }
+    }
+}

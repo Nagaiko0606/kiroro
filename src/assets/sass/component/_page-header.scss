@@ -1,0 +1,146 @@
+@use "../foundation/variables" as *;
+@use "../foundation/mixins" as *;
+
+// 下層共通ヘッダー
+
+.c-page-header {
+    width: 100%;
+    height: 600px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-size: cover;
+    background-position: center;
+
+    &__title {
+        min-width: 383px;
+        padding-block: 15px;
+        position: relative;
+
+        &::after{
+            content: "";
+            display: inline-block;
+            position: absolute;
+            background-size: contain;
+            background-repeat: no-repeat;
+            background-position: center;
+        }
+
+        &-text {
+            padding-block: 29px;
+            text-align: center;
+            font-size: rem(32);
+            letter-spacing: 0.2em;
+            color: $color-white;
+            border-block: solid 1px $color-white;
+            line-height: 1;
+        }
+    }
+
+    &.--about {
+        background-image: linear-gradient(to bottom, rgba(#b3b3b3, 0.8), rgba(#b3b3b3, 0.8)),
+        url(../images/about/mv.jpg);
+
+        .c-page-header__title{
+            background-color: #c28953;
+
+            &::after{
+                width: 92px;  
+                height: 114px;
+                background-image: url(../images/common/illust-bird9.png);
+                left: -3px;
+                top: -67px;
+            }
+        }
+    }
+
+    &.--information {
+        background-image: linear-gradient(to bottom, rgba(#b3b3b3, 0.8), rgba(#b3b3b3, 0.8)),
+        url(../images/information/mv.jpg);
+
+        .c-page-header__title{
+            background-color: #5a7e92;
+
+            &::after{
+                width: 103px;  
+                height: 70px;
+                background-image: url(../images/common/illust-bird3.png);
+                right: -13px;
+                top: -48px;
+            }
+        }
+    }
+
+    &.--news {
+        background-image: linear-gradient(to bottom, rgba(#b3b3b3, 0.8), rgba(#b3b3b3, 0.8)),
+        url(../images/news/mv.jpg);
+
+        .c-page-header__title{
+            background-color: $color-pink;
+
+            &::after{
+                width: 130px;  
+                height: 63px;
+                background-image: url(../images/common/illust-bird4.png);
+                right: 16px;
+                top: -45px;
+                transform: rotate(-12deg);
+            }
+        }
+    }
+
+    @include respond(phone) {
+        height: auto;
+        aspect-ratio: 1/1;
+
+        &__title {
+            min-width: 229px;
+            padding-block: 8px;
+
+            &-text {
+                padding-block: 18px;
+                font-size: rem(19);
+            }
+        }
+
+        &.--about {    
+            background-image: linear-gradient(to bottom, rgba(#b3b3b3, 0.8), rgba(#b3b3b3, 0.8)),url(../images/about/mv.jpg);
+            .c-page-header__title{
+                &::after{
+                    width: 55px;
+                    height: 68px;
+                    left: -2px;
+                    top: -40px;
+                }
+            }
+        }
+        &.--information {
+            background-image: linear-gradient(to bottom, rgba(#b3b3b3, 0.8), rgba(#b3b3b3, 0.8)),
+            url(../images/information/mv-sp.jpg);
+    
+            .c-page-header__title{    
+                &::after{
+                    width: 62px;  
+                    height: 42px;
+                    right: -9px;
+                    top: -29px;
+                }
+            }
+        }
+        &.--news {
+            background-image: linear-gradient(to bottom, rgba(#b3b3b3, 0.8), rgba(#b3b3b3, 0.8)),
+            url(../images/news/mv-sp.jpg);
+    
+            .c-page-header__title{ 
+                &::after{
+                    width: 78px;  
+                    height: 38px;
+                    right: 9px;
+                    top: -27px;
+                }
+            }
+        }
+
+
+    }
+}

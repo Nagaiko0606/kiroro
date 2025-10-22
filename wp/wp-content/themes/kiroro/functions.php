@@ -282,13 +282,6 @@ function mytheme_register_block_styles()
 add_action('init', 'mytheme_register_block_styles');
 
 // グループマップブロッグの登録
-function register_group_map_block() {
-    register_block_type( 'mytheme/group-map', [
-        'render_callback' => 'render_group_map_block',
-    ] );
-}
-add_action( 'init', 'register_group_map_block' );
-
 function render_group_map_block( $attributes, $content ) {
     ob_start();
     get_template_part( 'blocks/group-map/render' );
@@ -296,3 +289,12 @@ function render_group_map_block( $attributes, $content ) {
 }
 
 add_shortcode( 'group_map', 'render_group_map_block' );
+
+
+// お知らせ一覧ブロックの登録
+function render_news_section() {
+    ob_start();
+    get_template_part( 'template-parts/section-news' ); // 好きなパスに変更OK
+    return ob_get_clean();
+    }
+    add_shortcode( 'section_news', 'render_news_section' );

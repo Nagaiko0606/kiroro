@@ -5,25 +5,40 @@
 @use "../../foundation/variables" as *;
 
 
-.p-mv{
-    background-image: url(../../../images/news/mv@2x.jpg);
+.p-content{
+    background-color: $color-green;
+    padding-top: 181px;
+    padding-bottom: 88px;
+    color: $color-white;
+    position: relative;
 
-
-    @include respond(phone){
-        background-image: url(../../../images/news/mv-sp@2x.jpg);
+    &::before{
+        content: "";
+        display: inline-block;
+        width: 100vw;
+        height: calc((140/1366) * 100vw);
+        background-image: url(../../../images/news/wave-divider.svg);
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-position: center;
+        position: absolute;
+        top: 0;
+        left: 0;
+        transform: translateY(-99%);
+        z-index: 0;
     }
 }
 
-
-.p-content{
-    background-color: $color-primary;
-    padding-top: 85.6px;
-    padding-bottom: 77px;
-    color: $color-white;
-}
-
 .p-heading-secondary{
-    margin-bottom: calc(74px + var(--lending-trim));
+    margin-bottom: calc(76px + var(--lending-trim));
 }
 
-// 詳細ページ
+@include respond(phone){
+    .p-content{
+        padding-top: 40px;
+        &::before{
+            height: calc((59/414) * 100vw);
+            background-image: url(../../../images/news/wave-divider-sp.svg);
+        }
+    }
+}
