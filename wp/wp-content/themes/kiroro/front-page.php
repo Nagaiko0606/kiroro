@@ -1,19 +1,20 @@
 <?php get_header(); ?>
-<div class="p-mv">
-    <h1>
-        <picture>
-            <source srcset="<?php echo esc_url(get_stylesheet_directory_uri()); ?>/assets/images/home/logo-mv.webp 393w, <?php echo esc_url(get_stylesheet_directory_uri()); ?>/assets/images/home/logo-mv@2x.webp 786w"
-                type="image/webp" sizes="(max-width: 767px) 65.2vw, 393px">
-            <img srcset="<?php echo esc_url(get_stylesheet_directory_uri()); ?>/assets/images/home/logo-mv.jpg 393w, <?php echo esc_url(get_stylesheet_directory_uri()); ?>/assets/images/home/logo-mv@2x.jpg 786w"
-                src="<?php echo esc_url(get_stylesheet_directory_uri()); ?>/assets/images/home/logo-mv.png" alt="桜新町動物医療センター"
-                sizes="(max-width: 767px) 65.2vw, 393px" width="393" height="570" class="p-mv__logo">
-        </picture>
-    </h1>
-    <div class="p-mv__video p-video">
-        <video id="js-bgVideo" class="p-video__content" autoplay muted loop playsinline>
-            <source id="js-source-mp4" src="<?php echo esc_url(get_stylesheet_directory_uri()); ?>/" type="video/mp4">
-            <source id="js-source-webm" src="<?php echo esc_url(get_stylesheet_directory_uri()); ?>/" type="video/webm">
-        </video>
+<div class="swiper c-swiper">
+    <div class="swiper-wrapper c-swiper__wrapper">
+        <div class="swiper-slide c-swiper__slide">
+            <picture>
+                <source srcset="<?php echo get_template_directory_uri(); ?>/assets/images/home/mv1-sp.jpg" media="(max-width: 767px)">
+                <img src="<?php echo get_template_directory_uri(); ?>/assets/images/home/mv1.jpg" alt="" class="c-swiper__img">
+            </picture>
+        </div>
+        <div class="swiper-slide c-swiper__slide">
+            <div class="swiper-slide c-swiper__slide">
+                <picture>
+                    <source srcset="<?php echo get_template_directory_uri(); ?>/assets/images/home/mv2-sp.jpg" media="(max-width: 767px)">
+                    <img src="<?php echo get_template_directory_uri(); ?>/assets/images/home/mv2.jpg" alt="" class="c-swiper__img">
+                </picture>
+            </div>
+        </div>
     </div>
 </div>
 <?php if (have_posts()): while (have_posts()): the_post(); ?>

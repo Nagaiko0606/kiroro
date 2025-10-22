@@ -5,6 +5,7 @@
 .lazyblock {
     padding: 0;
     box-shadow: 0 0 0 1px violet;
+    background-color: transparent;
 
     .lzb-content-title {
         display: none;
@@ -101,10 +102,9 @@
     }
 
     dt {
-        color: $color-primary;
-        text-align-last: justify;
-        width: 6.5em;
-        padding-right: 2em;
+        color: $color-orange-dark;
+        width: 7.5em;
+        padding-right: 1em;
         font-weight: 400;
     }
 
@@ -118,19 +118,19 @@
 
 // 勤務情報テーブル
 .c-work-calendar {
-    border: solid 1px #557259;
+    border: solid 1px #a77a5f;
     border-collapse: collapse;
 
     th,
     td {
         line-height: 1;
-        border: solid 1px #557259;
+        border: solid 1px #a77a5f;
         vertical-align: middle;
     }
 
     th:first-child,
     td:first-child {
-        background-color: #8DB68F;
+        background-color: $color-orange-dark;
     }
 
     thead {
@@ -139,7 +139,7 @@
             font-weight: 400;
             text-align: center;
             font-size: rem(18);
-            color: $color-primary-dark;
+            color: #a77a5f;
         }
     }
 
@@ -157,7 +157,7 @@
         td {
             font-size: rem(29);
             width: rem(37);
-            color: $color-primary;
+            color: $color-orange-dark;
             text-align: center;
         }
     }
@@ -207,15 +207,11 @@
 }
 
 .c-map {
-    iframe {
-        max-width: 100%;
-    }
+    max-width: 100%;
+    height: auto;
+    aspect-ratio: 440/500;
+    margin-bottom: 30px;
 
-    @include respond(phone) {
-        igrame {
-            aspect-ratio: 342/390;
-        }
-    }
 }
 
 
@@ -390,9 +386,13 @@
 }
 
 // 波線区切り
+.wp-block-lazyblock-wave-divider-up,
+.wp-block-lazyblock-wave-divider-down{
+    position: relative;
+    z-index: 10;
+}
 .wp-block-lazyblock-wave-divider-up{
     transform: translateY(1px);
 }
 .wp-block-lazyblock-wave-divider-down{
-    transform: translateY(-1px);
-}
+    transform: translateY(-1px);}

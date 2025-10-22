@@ -89,6 +89,26 @@ img {
   transform: translate(-50%, -45%);
 }
 
+.p-intro {
+  position: relative;
+  padding-right: 60px;
+}
+.p-intro::before {
+  display: inline-block;
+  z-index: 10;
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: min(66.3026521061dvw, 53.125rem);
+  height: min(100.0780031201dvw, 80.1875rem);
+  transform: translateY(-57%);
+  background-image: url(../../../images/home/illus-tree@2x.png);
+  background-position: center right;
+  background-size: contain;
+  background-repeat: no-repeat;
+  content: "";
+}
+
 .p-news {
   padding-top: 88px;
   padding-bottom: 100px;
@@ -120,7 +140,16 @@ img {
     width: 65.2173913043vw;
     transform: translate(-50%, -60%);
   }
+  .p-intro {
+    padding-right: 0;
+  }
   .p-intro__concept {
     font-size: 7.5609756098vw !important;
+  }
+  .p-intro::before {
+    width: 88.6746987952dvw;
+    height: 125.7831325301dvw;
+    transform: translateY(-52%);
+    background-image: url(../../../images/home/illus-tree-sp@2x.png);
   }
 }/*# sourceMappingURL=style.css.map */

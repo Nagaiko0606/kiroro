@@ -1079,6 +1079,7 @@ ol.wp-block-list > li {
 
 .lazyblock {
   padding: 0;
+  background-color: transparent;
   box-shadow: 0 0 0 1px violet;
 }
 .lazyblock .lzb-content-title {
@@ -1127,34 +1128,32 @@ ol.wp-block-list > li {
   line-height: 1.8947368421;
 }
 .c-info-list dt {
-  width: 6.5em;
-  padding-right: 2em;
-  color: #799E7C;
+  width: 7.5em;
+  padding-right: 1em;
+  color: #c18d6f;
   font-weight: 400;
-  -moz-text-align-last: justify;
-  text-align-last: justify;
 }
 .c-info-list dd > p {
   margin-bottom: 5px !important;
 }
 
 .c-work-calendar {
-  border: solid 1px #557259;
+  border: solid 1px #a77a5f;
   border-collapse: collapse;
 }
 .c-work-calendar th,
 .c-work-calendar td {
-  border: solid 1px #557259;
+  border: solid 1px #a77a5f;
   line-height: 1;
   vertical-align: middle;
 }
 .c-work-calendar th:first-child,
 .c-work-calendar td:first-child {
-  background-color: #8DB68F;
+  background-color: #c18d6f;
 }
 .c-work-calendar thead th {
   padding-block: 9.6px;
-  color: #6E9072;
+  color: #a77a5f;
   font-weight: 400;
   font-size: 1.125rem;
   text-align: center;
@@ -1170,7 +1169,7 @@ ol.wp-block-list > li {
 }
 .c-work-calendar tbody td {
   width: 2.3125rem;
-  color: #799E7C;
+  color: #c18d6f;
   font-size: 1.8125rem;
   text-align: center;
 }
@@ -1191,8 +1190,11 @@ ol.wp-block-list > li {
   background-color: #CCCCCC;
 }
 
-.c-map iframe {
+.c-map {
+  aspect-ratio: 440/500;
   max-width: 100%;
+  height: auto;
+  margin-bottom: 30px;
 }
 
 .c-circle-list > li {
@@ -1294,6 +1296,12 @@ ol.wp-block-list > li {
 .c-recruit-list__nonavailable {
   font-size: 0.9375rem;
   line-height: 2.2;
+}
+
+.wp-block-lazyblock-wave-divider-up,
+.wp-block-lazyblock-wave-divider-down {
+  z-index: 10;
+  position: relative;
 }
 
 .wp-block-lazyblock-wave-divider-up {
@@ -1632,9 +1640,6 @@ ol.wp-block-list > li {
   .c-work-calendar tbody td {
     width: min(7.0048309179vw, 1.8125rem);
     font-size: min(5.5555555556vw, 1.4375rem);
-  }
-  .c-map igrame {
-    aspect-ratio: 342/390;
   }
   .c-price-table {
     width: 100%;
