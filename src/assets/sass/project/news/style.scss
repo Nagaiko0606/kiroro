@@ -7,7 +7,7 @@
 
 .p-content{
     background-color: $color-green;
-    padding-top: 181px;
+    padding-top: 80px;
     padding-bottom: 88px;
     color: $color-white;
     position: relative;
@@ -15,7 +15,7 @@
     &::before{
         content: "";
         display: inline-block;
-        width: 100vw;
+        width: 100%;
         height: calc((140/1366) * 100vw);
         background-image: url(../../../images/news/wave-divider.svg);
         background-size: cover;

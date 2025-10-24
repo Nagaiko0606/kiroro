@@ -66,21 +66,12 @@ function mytheme_enqueue_assets()
         );
     }
     // お知らせページのスタイルを読み込む
-    if (is_home() || is_single() && !is_singular('blog')) {
+    if (is_home() || is_single() ) {
         wp_enqueue_style(
             'mytheme-news-style',
             get_template_directory_uri() . '/assets/css/project/news/style.css',
             array('common-style'),
             filemtime(get_theme_file_path('assets/css/project/news/style.css'))
-        );
-    }
-    // ブログページのスタイルを読み込む
-    if (is_singular('blog')|| is_post_type_archive('blog')) {
-        wp_enqueue_style(
-            'mytheme-blog-style',
-            get_template_directory_uri() . '/assets/css/project/blog/style.css',
-            array('common-style'),
-            filemtime(get_theme_file_path('assets/css/project/blog/style.css'))
         );
     }
     // 固定ページのスタイル読み込み
@@ -232,7 +223,7 @@ function custom_login_style()
             height: 45px;
             background-repeat: no-repeat;
             background-size: contain;
-            background-image: url("<?php bloginfo('template_directory'); ?>/assets/images/footer-logo.png");
+            background-image: url("<?php bloginfo('template_directory'); ?>/assets/images/common/logo.svg");
         }
 
         body.login {
@@ -284,7 +275,7 @@ add_action('init', 'mytheme_register_block_styles');
 // グループマップブロッグの登録
 function render_group_map_block( $attributes, $content ) {
     ob_start();
-    get_template_part( 'blocks/group-map/render' );
+    get_template_part( 'assets/group-map/group-map' );
     return ob_get_clean();
 }
 
@@ -294,7 +285,7 @@ add_shortcode( 'group_map', 'render_group_map_block' );
 // お知らせ一覧ブロックの登録
 function render_news_section() {
     ob_start();
-    get_template_part( 'template-parts/section-news' ); // 好きなパスに変更OK
+    get_template_part( 'template-parts/section-news' ); 
     return ob_get_clean();
     }
     add_shortcode( 'section_news', 'render_news_section' );

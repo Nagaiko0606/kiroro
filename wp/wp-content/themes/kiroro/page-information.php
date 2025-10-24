@@ -19,8 +19,8 @@
             </ul>
             </li>
             <li><a href="#health-check">健康診断</a></li>
-            <li><a href="#sterilization">去勢避妊手術</a></li>
-            <li class="p-section-nav__item-sub"><a href="#departments">診療科紹介<span class="u-pc">：</span><span class="u-sp">9種</span></a>
+            <li><a href="#neutering-and-spaying">去勢避妊手術</a></li>
+            <li class="p-section-nav__item-sub"><a href="#departments">診療科紹介<span class="u-pc">：</span></a>
               <ul class="p-section-nav__sublist">
                 <li class="p-section-nav__subitem"><a href="#surgery" class="p-section-nav__sublink">一般外科</a></li>
                 <li class="p-section-nav__subitem"><a href="#internal" class="p-section-nav__sublink">一般内科</a></li>
@@ -35,7 +35,7 @@
                 <li class="p-section-nav__subitem"><a href="#neurology" class="p-section-nav__sublink">神経科</a></li>
               </ul>
             </li>
-            <li><a href="#about">セカンドオピニオン</a></li>
+            <li><a href="#second-opinion ">セカンドオピニオン</a></li>
           </ul>
         </div>
       </nav>

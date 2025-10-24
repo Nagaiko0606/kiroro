@@ -217,171 +217,17 @@
 
 //丸付きリスト
 .c-circle-list {
+
     >li {
+        font-size: $font-small;
         &::before {
             content: "●";
             margin-right: 0.8em;
             color: var(--bullet-color);
         }
-
+        
         padding-left: 1.8em;
         text-indent: -1.8em;
-    }
-}
-
-// 価格表
-.c-price-table{
-    border-collapse: collapse !important;
-    border-spacing: 0;
-    th,td{
-        padding-left: 1em;
-        vertical-align: middle;
-        border-top: solid 1px #999999;
-        border-bottom: solid 1px #999999;
-        border-right: none;
-        border-left: none;
-    }
-    th,td{
-        &:first-child{
-            width: 53%;
-        }
-    }
-    thead{
-        background-color: $color-primary;
-        color: $color-white;
-        font-weight: 700;
-        font-size: rem(15);
-
-        tr{
-            height: rem(35);
-        }
-
-        th:first-child{
-            letter-spacing: 1em;
-        }
-    }
-    tbody{
-        font-size: rem(15);
-        color: $color-text;
-        font-weight: 600;
-
-        tr{
-            height: rem(33);
-
-            &:nth-child(odd){
-                background-color: $color-white;
-            }
-            &:nth-child(even){
-                background-color: #E3DED7;
-            }
-        }
-
-        td:nth-child(2){
-            padding-left: 3em;
-        }
-    }
-
-    @include respond(phone){
-        width: 100%;
-        max-width: 400px;
-        th,td{
-            padding-inline: 0.5em;
-            &:first-child{
-                width: 55%;
-            }
-            &:last-child{
-                text-align: center;
-                width: 45%;
-            }
-        }
-        thead{
-            background-color: $color-primary;
-            color: $color-white;
-            font-weight: 700;
-            font-size: rem(14);
-    
-            tr{
-                height: rem(35);
-            }
-    
-            th:first-child{
-                letter-spacing: 1em;
-            }
-        }
-        tbody{
-            font-size: rem(14);
-            color: $color-text;
-            font-weight: 600;
-    
-            tr{
-                height: rem(33);
-    
-                &:nth-child(odd){
-                    background-color: $color-white;
-                }
-                &:nth-child(even){
-                    background-color: #E3DED7;
-                }
-            }
-    
-            td:nth-child(2){
-                padding-left: 0em;
-                text-align: center;
-            }
-        }
-    }
-}
-
-// ラベル付き画像
-.c-image-width-label{
-    &__label{
-        font-size: rem(22);
-        font-weight: 700;
-        border-radius: 50%;
-        width: 53px;
-        aspect-ratio: 1/1;
-        background-color: $color-primary-dark;
-        color: $color-white;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        position: relative;
-        z-index: 10;
-        margin-left: 9px;
-    }
-    &__img{
-        border-radius: 16px;
-        margin-top: -27px;
-        position: relative;
-        z-index: 0;
-        aspect-ratio: 242/295;
-        object-fit: cover;
-    }
-}
-
-.c-recruit-list{
-
-    &__row{
-        display: flex;
-
-        dt,dd{
-            font-size: rem(15);
-            font-weight: 400;
-            line-height: 1.8;
-        }
-    
-        dt{
-            width: 4.2em;
-            text-align-last: justify;
-            font-weight: 400;
-            margin-right: 2em;
-            flex-shrink: 0;
-        }
-    }
-
-    &__nonavailable{
-        font-size: rem(15);
-        line-height: 2.2;
     }
 }
 

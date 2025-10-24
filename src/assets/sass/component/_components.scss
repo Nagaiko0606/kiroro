@@ -1,53 +1,6 @@
 @use "../foundation/variables" as *;
 @use "../foundation/mixins" as *;
 
-// ロゴ付h2見出し
-
-.c-heading-secondary {
-    text-align: center;
-
-    img {
-        width: 68px;
-    }
-
-    &__text {
-        font-size: $font-xxlarge;
-        font-weight: 600;
-        letter-spacing: 0.1em;
-        margin-top: calc(21px + var(--lending-trim));
-        line-height: 1.7;
-
-        &.--green {
-            color: $color-primary-dark;
-        }
-
-        &.--white {
-            color: $color-white;
-        }
-    }
-
-    &__sub {
-        font-size: $font-medium;
-        line-height: 1.7;
-
-        &.--green {
-            color: $color-primary-dark;
-        }
-
-        &.--white {
-            color: $color-white;
-        }
-    }
-
-    @include respond(phone){
-        img{
-            width: 46px;
-        }
-        &__text {
-            margin-top: calc(10px + var(--lending-trim));
-        }
-    }
-}
 
 .c-pagination {
     width: 100%;
@@ -69,29 +22,7 @@
 
         &.current {
             background-color: $color-white;
-            color: $color-primary-dark;
-        }
-    }
-
-    &.--primary {
-        .page-numbers {
-            color: $color-white;
-
-            &.current {
-                background-color: $color-white;
-                color: $color-primary-dark;
-            }
-        }
-    }
-
-    &.--secondary {
-        .page-numbers {
-            color: $color-primary-dark;
-
-            &.current {
-                background-color: $color-primary;
-                color: $color-white;
-            }
+            color: #6e9072;
         }
     }
 
@@ -150,45 +81,6 @@
 
 }
 
-// ブログカード
-.c-blog {
-    &__img {
-        width: 100%;
-        aspect-ratio: 1/1;
-        object-fit: cover;
-        object-position: center;
-    }
-
-    &__title {
-        margin-top: calc(25px + var(--lending-trim));
-        margin-bottom: calc(9px + var(--lending-trim));
-        font-size: $font-xlarge;
-        color: $color-primary-dark;
-        font-weight: 700;
-        line-height: calc(46/26);
-        word-wrap: break-word;
-        display: -webkit-box;
-        -webkit-box-orient: vertical;
-        -webkit-line-clamp: 2;
-        overflow: hidden;
-    }
-
-    &__content {
-        color: $color-text;
-        font-size: $font-medium;
-        line-height: calc(36.8/19.8);
-        word-wrap: break-word;
-        display: -webkit-box;
-        -webkit-box-orient: vertical;
-        -webkit-line-clamp: 3;
-        overflow: hidden;
-    }
-
-    &__more {
-        color: $color-primary;
-        font-size: $font-medium;
-    }
-}
 
 // 記事表示
 .c-article {
@@ -416,7 +308,7 @@
             background-color: color-white;
 
             &[type="submit"] {
-                background-color: color-primary;
+                background-color: $color-orange-dark;
                 color: color-white;
                 padding-inline: 1.5em;
             }
@@ -441,26 +333,6 @@
         }
     }
 
-    &.--blog {
-        .c-article__header {
-            border-color: $color-primary;
-        }
-
-        .c-article__date {
-            color: $color-text;
-        }
-
-        .c-article__title {
-            color: $color-primary-dark;
-        }
-
-        .c-article__content {
-            color: $color-text;
-        }
-    }
-
-
-
 }
 
 .c-label {
@@ -468,14 +340,10 @@
     padding-inline: 0.3em;
     font-size: 14px;
 
-    &.--blog {
-        background-color: $color-primary;
-        color: $color-white;
-    }
 
     &.--news {
         background-color: $color-white;
-        color: $color-primary-dark;
+        color: $color-green;
     }
 }
 

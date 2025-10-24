@@ -42,19 +42,19 @@ img {
 }
 
 ::-moz-selection {
-  background-color: #799E7C;
+  background-color: #c18d6f;
   color: #ffffff;
 }
 
 ::selection {
-  background-color: #799E7C;
+  background-color: #c18d6f;
   color: #ffffff;
 }
 
 .p-content {
   padding-top: 85.6px;
   padding-bottom: 77px;
-  background-color: #799E7C;
+  background-color: #c18d6f;
   color: #ffffff;
 }
 

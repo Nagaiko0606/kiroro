@@ -5,10 +5,10 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <!-- ファビコン -->
-    <link rel="icon" href="<?php echo esc_url(get_stylesheet_directory_uri()); ?>/favicon.ico" sizes="32x32">
+    <!-- <link rel="icon" href="<?php echo esc_url(get_stylesheet_directory_uri()); ?>/favicon.ico" sizes="32x32">
     <link rel="icon" href="<?php echo esc_url(get_stylesheet_directory_uri()); ?>/favicon.svg" type="image/svg+xml">
     <link rel="apple-touch-icon" href="<?php echo esc_url(get_stylesheet_directory_uri()); ?>/apple-touch-icon.png">
-    <link rel="manifest" href="<?php echo esc_url(get_stylesheet_directory_uri()); ?>/manifest.json">
+    <link rel="manifest" href="<?php echo esc_url(get_stylesheet_directory_uri()); ?>/manifest.json"> -->
     <?php wp_head(); ?>
 </head>
 
@@ -62,20 +62,20 @@
                 <li class="l-drawerNav__item --blue">
                     <a href="<?php echo esc_url(home_url()); ?>/about">当院について</a>
                     <ul class="l-drawerNav__sublist --blue">
-                        <li class="l-drawerNav__subitem"><a href="<?php echo esc_url(home_url()); ?>#feature" class="l-drawerNav__sublink">当院の特徴</a></li>
-                        <li class="l-drawerNav__subitem"><a href="<?php echo esc_url(home_url()); ?>#staff" class="l-drawerNav__sublink">スタッフ紹介</a></li>
-                        <li class="l-drawerNav__subitem"><a href="<?php echo esc_url(home_url()); ?>#access" class="l-drawerNav__sublink">診療情報・アクセス</a></li>
-                        <li class="l-drawerNav__subitem"><a href="<?php echo esc_url(home_url()); ?>#facility" class="l-drawerNav__sublink">施設紹介</a></li>
+                        <li class="l-drawerNav__subitem"><a href="<?php echo esc_url(home_url()); ?>/about/#feature" class="l-drawerNav__sublink">当院の特徴</a></li>
+                        <li class="l-drawerNav__subitem"><a href="<?php echo esc_url(home_url()); ?>/about/#staff" class="l-drawerNav__sublink">スタッフ紹介</a></li>
+                        <li class="l-drawerNav__subitem"><a href="<?php echo esc_url(home_url()); ?>/about/#access" class="l-drawerNav__sublink">診療情報・アクセス</a></li>
+                        <li class="l-drawerNav__subitem"><a href="<?php echo esc_url(home_url()); ?>/about/#facility" class="l-drawerNav__sublink">施設紹介</a></li>
                     </ul>
                 </li>
                 <li class="l-drawerNav__item --orange">
                     <a href="<?php echo esc_url(home_url()); ?>/information">診療のご案内</a>
                     <ul class="l-drawerNav__sublist --orange">
-                        <li class="l-drawerNav__subitem"><a href="<?php echo esc_url(home_url()); ?>#preventive-medicine" class="l-drawerNav__sublink">予防医療</a></li>
-                        <li class="l-drawerNav__subitem"><a href="<?php echo esc_url(home_url()); ?>#health-check" class="l-drawerNav__sublink">健康診断</a></li>
-                        <li class="l-drawerNav__subitem"><a href="<?php echo esc_url(home_url()); ?>#neutering-and-spaying" class="l-drawerNav__sublink">去勢避妊手術</a></li>
-                        <li class="l-drawerNav__subitem"><a href="<?php echo esc_url(home_url()); ?>#departments" class="l-drawerNav__sublink">診療科目紹介</a></li>
-                        <li class="l-drawerNav__subitem"><a href="<?php echo esc_url(home_url()); ?>#second-opinion" class="l-drawerNav__sublink">セカンドオピニオン</a></li>
+                        <li class="l-drawerNav__subitem"><a href="<?php echo esc_url(home_url()); ?>/information/#preventive-medicine" class="l-drawerNav__sublink">予防医療</a></li>
+                        <li class="l-drawerNav__subitem"><a href="<?php echo esc_url(home_url()); ?>/information/#health-check" class="l-drawerNav__sublink">健康診断</a></li>
+                        <li class="l-drawerNav__subitem"><a href="<?php echo esc_url(home_url()); ?>/information/#neutering-and-spaying" class="l-drawerNav__sublink">去勢避妊手術</a></li>
+                        <li class="l-drawerNav__subitem"><a href="<?php echo esc_url(home_url()); ?>/information/#departments" class="l-drawerNav__sublink">診療科目紹介</a></li>
+                        <li class="l-drawerNav__subitem"><a href="<?php echo esc_url(home_url()); ?>/information/#second-opinion" class="l-drawerNav__sublink">セカンドオピニオン</a></li>
                     </ul>
                 </li>
                 <li class="l-drawerNav__item --pink">

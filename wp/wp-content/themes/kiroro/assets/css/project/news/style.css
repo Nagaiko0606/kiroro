@@ -42,18 +42,18 @@ img {
 }
 
 ::-moz-selection {
-  background-color: #799E7C;
+  background-color: #c18d6f;
   color: #ffffff;
 }
 
 ::selection {
-  background-color: #799E7C;
+  background-color: #c18d6f;
   color: #ffffff;
 }
 
 .p-content {
   position: relative;
-  padding-top: 181px;
+  padding-top: 80px;
   padding-bottom: 88px;
   background-color: #799e7c;
   color: #ffffff;
@@ -64,7 +64,7 @@ img {
   position: absolute;
   top: 0;
   left: 0;
-  width: 100vw;
+  width: 100%;
   height: 10.2489019034vw;
   transform: translateY(-99%);
   background-image: url(../../../images/news/wave-divider.svg);
