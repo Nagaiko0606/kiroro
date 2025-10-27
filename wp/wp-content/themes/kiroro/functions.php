@@ -66,7 +66,7 @@ function mytheme_enqueue_assets()
         );
     }
     // お知らせページのスタイルを読み込む
-    if (is_home() || is_single() ) {
+    if (is_home() || is_single() || is_category()) {
         wp_enqueue_style(
             'mytheme-news-style',
             get_template_directory_uri() . '/assets/css/project/news/style.css',

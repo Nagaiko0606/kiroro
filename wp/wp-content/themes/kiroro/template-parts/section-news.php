@@ -9,16 +9,48 @@
         </div>
         <div class="c-news">
             <?php
-            // お知らせカテゴリーの投稿を3件取得
-            $news_args = array(
-                'post_type' => 'post',
-                'posts_per_page' => 3,
-                'orderby' => 'date',
-                'order' => 'DESC',
-                'ignore_sticky_posts' => true
-            );
+            $sticky = get_option('sticky_posts');
 
-            $news_query = new WP_Query($news_args);
+            if (!empty($sticky)) {
+                // stickyを優先して取得
+                rsort($sticky);
+
+                $sticky_query = new WP_Query(array(
+                    'post__in' => $sticky,
+                    'posts_per_page' => 3,
+                    'orderby' => 'date',
+                ));
+
+                $sticky_ids = wp_list_pluck($sticky_query->posts, 'ID');
+                $sticky_count = count($sticky_ids);
+
+                // まだ3件に満たない場合、残りを通常投稿から取得
+                if ($sticky_count < 3) {
+                    $normal_query = new WP_Query(array(
+                        'post_type' => 'post',
+                        'posts_per_page' => 3 - $sticky_count,
+                        'post__not_in' => $sticky_ids,
+                        'orderby' => 'date',
+                        'order' => 'DESC',
+                    ));
+
+                    // 結合
+                    $news_query = new WP_Query(array(
+                        'post__in' => array_merge($sticky_ids, wp_list_pluck($normal_query->posts, 'ID')),
+                        'orderby' => 'post__in',
+                    ));
+                } else {
+                    $news_query = $sticky_query;
+                }
+            } else {
+                // stickyがない場合は通常投稿3件
+                $news_query = new WP_Query(array(
+                    'post_type' => 'post',
+                    'posts_per_page' => 3,
+                    'orderby' => 'date',
+                    'order' => 'DESC',
+                ));
+            }
 
             if ($news_query->have_posts()) :
                 while ($news_query->have_posts()) : $news_query->the_post();
@@ -28,7 +60,15 @@
                             <time datetime="<?php echo get_the_date('Y-m-d'); ?>" class="c-news__date"><?php echo get_the_date('Y.m.d'); ?></time>
                             <h3 class="c-news__title"><?php the_title(); ?></h3>
                             <div class="c-news__content">
-                                <?php echo wp_trim_words(get_the_content(), 100, '...'); ?>
+                                <?php
+                                $content = get_the_content();
+                                $content = apply_filters('the_content', $content);
+                                // pタグとbrタグ以外のHTMLタグを削除
+                                $content = strip_tags($content, '<p><br>');
+                                //文字数制限
+                                $trimmed = mb_substr($content, 0, 120);
+                                echo $trimmed;
+                                ?>
                             </div>
                             <?php if (has_post_thumbnail()) : ?>
                                 <?php
@@ -52,3 +92,4 @@
         </div>
     </div>
 </section>
+

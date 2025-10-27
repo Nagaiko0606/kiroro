@@ -44,7 +44,6 @@ const sassCompile = () => {
       order: 'smacss'
       //  CSSプロパティの順序をSMACSSの規則に従って整理
     }),
-    mqpacker(),
     autoprefixer({
       cascade: false,
       grid: true

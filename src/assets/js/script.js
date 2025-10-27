@@ -1,5 +1,21 @@
 'use strict';
 
+window.addEventListener('load', () => {
+  setHeaderHeight();
+});
+
+window.addEventListener('resize', setHeaderHeight);
+
+function setHeaderHeight() {
+  requestAnimationFrame(() => {
+    const header = document.querySelector('.l-header');
+    if (header) {
+      const headerHeight = header.offsetHeight;
+      document.documentElement.style.setProperty('--header-height', `${headerHeight}px`);
+    }
+  });
+}
+
 document.addEventListener('DOMContentLoaded', () => {
 
   // ハンバーガーメニュー
@@ -27,7 +43,7 @@ document.addEventListener('DOMContentLoaded', () => {
       hamburger.setAttribute('aria-expanded', false);
       spMenuBg.classList.remove('is-active');
     })
-  })
+  });
 
   // ヘッダー影の追加
   scrollHeaderShadow();
@@ -39,20 +55,6 @@ document.addEventListener('DOMContentLoaded', () => {
       });
     }
   }
-
-  // ヘッダー高さ
-  setHeaderHeight();
-  function setHeaderHeight() {
-    requestAnimationFrame(() => {
-      const header = document.querySelector('.l-header');
-      if (header) {
-        const headerHeight = header.offsetHeight;
-        document.documentElement.style.setProperty('--header-height', `${headerHeight}px`);
-      }
-    });
-  }
-  setHeaderHeight();
-  window.addEventListener('resize', setHeaderHeight);
 
   // スワイパー
   const swiper = new Swiper('.c-swiper', {

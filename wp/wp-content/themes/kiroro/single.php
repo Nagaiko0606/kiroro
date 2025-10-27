@@ -14,8 +14,9 @@
                     $category = get_the_category();
                     if (!empty($category)) :
                         $category_name = esc_html($category[0]->name); // カテゴリー名を取得
+                        $category_link = get_category_link($category[0]->term_id); // カテゴリーのリンクを取得
                     ?>
-                        <span class="c-label --news"><?php echo $category_name; ?></span>
+                        <a href="<?php echo esc_url($category_link); ?>" class="c-label --news"><?php echo $category_name; ?></a>
                     <?php endif; ?>
                 </div>
                 <h1 class="c-article__title"><?php the_title(); ?></h1>
@@ -24,7 +25,7 @@
                 <?php the_content(); ?>
             </div>
             <div class="u-align-center">
-                <a href="<?php echo esc_url( home_url('/news') ); ?>" class="c-button --primary">一覧へ戻る</a>
+                <a href="<?php echo esc_url(home_url('/news')); ?>" class="c-button --primary">一覧へ戻る</a>
             </div>
         </div>
     </article>

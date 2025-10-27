@@ -2,10 +2,10 @@
 @use "../foundation/mixins" as *;
 
 .l-footer {
-    background-color: var(--color-white);
+    background-color: $color-white;
     padding-block: pc_vw(40);
 
-    &.--border{
+    &.\--border{
         border-top: 1px solid #999999;
     }
 
@@ -174,12 +174,12 @@
                 margin-bottom: sp_vw(11);
             }
 
-            &-link {
+            &-number {
                 gap: sp_vw(9);
                 font-size: font_sp(14);
 
                 img {
-                    width: sp_vw(23);
+                    width: sp_vw(20);
                 }
             }
         }

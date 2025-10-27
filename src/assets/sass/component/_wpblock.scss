@@ -100,3 +100,10 @@ ol.wp-block-list{
     }
 
 }
+
+// リンク指定されたブロックのホバー時のスタイル
+.wp-block-group.has-link{
+    &:hover{
+        opacity: 0.7;
+    }
+}

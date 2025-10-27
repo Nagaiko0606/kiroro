@@ -16,18 +16,22 @@
         margin-right: 0.1em;
     }
 
-    &.--primary {
+    &.\--primary {
         background-color: transparent;
         color: $color-white;
         border: 1px solid $color-white;
+
+        &:hover {
+            border-color: rgba($color-white, 0.7);
+        }
     }
 
-    &.--secondary {
+    &.\--secondary {
         background-color: #c28953;
         color: $color-white;
         position: relative;
 
-        &::after{
+        &::after {
             content: "";
             display: inline-block;
             font-size: $font-large;
@@ -40,6 +44,36 @@
             position: absolute;
             top: calc((65/18) * -1em);
             right: calc((31/18) * -1em);
+        }
+
+        &:hover {
+            opacity: 0.7;
+        }
+    }
+
+    @include respond(tab-land) {
+        min-width: 230px;
+
+        &.\--secondary {
+            &::after {
+                width: calc((85/18) * 1em);
+                height: calc((106/18) * 1em);
+                top: calc((52/18) * -1em);
+                right: calc((25/18) * -1em);
+            }
+        }
+    }
+
+    @include respond(phone) {
+        min-width: 202px;
+
+        &.\--secondary {
+            &::after {
+                width: calc((41/17) * 1em);
+                height: calc((51/17) * 1em);
+                top: calc((36/17) * -1em);
+                right: calc((9/17) * -1em);
+            }
         }
     }
 }

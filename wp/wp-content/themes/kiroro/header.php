@@ -9,6 +9,13 @@
     <link rel="icon" href="<?php echo esc_url(get_stylesheet_directory_uri()); ?>/favicon.svg" type="image/svg+xml">
     <link rel="apple-touch-icon" href="<?php echo esc_url(get_stylesheet_directory_uri()); ?>/apple-touch-icon.png">
     <link rel="manifest" href="<?php echo esc_url(get_stylesheet_directory_uri()); ?>/manifest.json"> -->
+    <!-- preload -->
+    <link rel="preload" href="<?php echo esc_url(get_stylesheet_directory_uri()); ?>/assets/images/about/mv.jpg" as="image">
+    <link rel="preload" href="<?php echo esc_url(get_stylesheet_directory_uri()); ?>/assets/images/about/mv-sp.jpg" as="image">
+    <link rel="preload" href="<?php echo esc_url(get_stylesheet_directory_uri()); ?>/assets/images/information/mv.jpg" as="image">
+    <link rel="preload" href="<?php echo esc_url(get_stylesheet_directory_uri()); ?>/assets/images/information/mv-sp.jpg" as="image">
+    <link rel="preload" href="<?php echo esc_url(get_stylesheet_directory_uri()); ?>/assets/images/news/mv.jpg" as="image">
+    <link rel="preload" href="<?php echo esc_url(get_stylesheet_directory_uri()); ?>/assets/images/news/mv-sp.jpg" as="image">
     <?php wp_head(); ?>
 </head>
 
@@ -96,9 +103,8 @@
                 <a href="<?php echo esc_url('#'); ?>" target="_blank" rel="noopener noreferrer"><img src="<?php echo esc_url(get_stylesheet_directory_uri()); ?>/assets/images/common/icon-book-blue.svg" alt="オンライン予約サイトへのリンク" width="29" height="22">
                     オンライン診療予約</a>
             </div>
-            <img src="<?php echo esc_url(get_stylesheet_directory_uri()); ?>/assets/images/common/logo-secondary.svg" alt="キロロ動物病院" lass="l-drawerNav-wrapper__logo">
+            <img src="<?php echo esc_url(get_stylesheet_directory_uri()); ?>/assets/images/common/logo-secondary.svg" alt="キロロ動物病院" class="l-drawerNav-wrapper__logo">
         </div>
-    </div>
     </div>
     <div class="l-drawerBackground" id="js-drawerBackground" aria-hidden="true" aria-label="メニューの背景"
         role="presentation"></div>

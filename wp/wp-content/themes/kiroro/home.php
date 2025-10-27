@@ -12,16 +12,16 @@
         </h2>
         <div class="c-news">
             <?php
-            // お知らせカテゴリーの投稿を3件取得
-            $news_args = array(
+            $paged = get_query_var('paged') ? get_query_var('paged') : 1;
+
+            $news_query = new WP_Query(array(
                 'post_type' => 'post',
                 'posts_per_page' => 12,
-                'paged'          => $paged,
                 'orderby' => 'date',
                 'order' => 'DESC',
-                'ignore_sticky_posts' => true
-            );
-            $news_query = new WP_Query($news_args);
+                'ignore_sticky_posts' => false, // ← stickyを含めて表示
+                'paged' => $paged,
+            ));
 
             if ($news_query->have_posts()) :
                 while ($news_query->have_posts()) : $news_query->the_post();
@@ -31,7 +31,15 @@
                             <time datetime="<?php echo get_the_date('Y-m-d'); ?>" class="c-news__date"><?php echo get_the_date('Y.m.d'); ?></time>
                             <h3 class="c-news__title"><?php the_title(); ?></h3>
                             <div class="c-news__content">
-                                <?php echo wp_trim_words(get_the_content(), 150, '...'); ?>
+                                <?php
+                                $content = get_the_content();
+                                $content = apply_filters('the_content', $content);
+                                // pタグとbrタグ以外のHTMLタグを削除
+                                $content = strip_tags($content, '<p><br>');
+                                //文字数制限
+                                $trimmed = mb_substr($content, 0, 120);
+                                echo $trimmed;
+                                ?>
                             </div>
                             <?php if (has_post_thumbnail()) : ?>
                                 <?php

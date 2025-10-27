@@ -37,7 +37,7 @@
         }
     }
 
-    &.--about {
+    &.\--about {
         background-image: linear-gradient(to bottom, rgba(#b3b3b3, 0.8), rgba(#b3b3b3, 0.8)),
         url(../images/about/mv.jpg);
 
@@ -54,7 +54,7 @@
         }
     }
 
-    &.--information {
+    &.\--information {
         background-image: linear-gradient(to bottom, rgba(#b3b3b3, 0.8), rgba(#b3b3b3, 0.8)),
         url(../images/information/mv.jpg);
 
@@ -71,7 +71,7 @@
         }
     }
 
-    &.--news {
+    &.\--news {
         background-image: linear-gradient(to bottom, rgba(#b3b3b3, 0.8), rgba(#b3b3b3, 0.8)),
         url(../images/news/mv.jpg);
 
@@ -103,8 +103,8 @@
             }
         }
 
-        &.--about {    
-            background-image: linear-gradient(to bottom, rgba(#b3b3b3, 0.8), rgba(#b3b3b3, 0.8)),url(../images/about/mv.jpg);
+        &.\--about {    
+            background-image: linear-gradient(to bottom, rgba(#b3b3b3, 0.8), rgba(#b3b3b3, 0.8)),url(../images/about/mv-sp.jpg);
             .c-page-header__title{
                 &::after{
                     width: 55px;
@@ -114,7 +114,7 @@
                 }
             }
         }
-        &.--information {
+        &.\--information {
             background-image: linear-gradient(to bottom, rgba(#b3b3b3, 0.8), rgba(#b3b3b3, 0.8)),
             url(../images/information/mv-sp.jpg);
     
@@ -127,7 +127,7 @@
                 }
             }
         }
-        &.--news {
+        &.\--news {
             background-image: linear-gradient(to bottom, rgba(#b3b3b3, 0.8), rgba(#b3b3b3, 0.8)),
             url(../images/news/mv-sp.jpg);
     

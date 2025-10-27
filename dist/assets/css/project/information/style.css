@@ -149,13 +149,8 @@
   .p-section-nav__sublist {
     display: none;
   }
-  .p-healthcheck__menu {
-    row-gap: 50px !important;
-  }
-  .p-healthcheck__menu > div {
-    flex-basis: 100% !important;
-  }
 }
+
 @media only screen and (max-width: 900px) {
   .p-healthcheck__menu {
     row-gap: 50px;
@@ -165,5 +160,13 @@
   }
   .p-healthcheck__menu > div {
     flex-basis: 47% !important;
+  }
+}
+@media only screen and (max-width: 767px) {
+  .p-healthcheck__menu {
+    row-gap: 50px !important;
+  }
+  .p-healthcheck__menu > div {
+    flex-basis: 100% !important;
   }
 }/*# sourceMappingURL=style.css.map */

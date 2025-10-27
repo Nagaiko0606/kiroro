@@ -42,13 +42,17 @@ img {
 }
 
 ::-moz-selection {
-  background-color: #c18d6f;
+  background-color: #f4a466;
   color: #ffffff;
 }
 
 ::selection {
-  background-color: #c18d6f;
+  background-color: #f4a466;
   color: #ffffff;
+}
+
+::-webkit-tap-highlight-color {
+  background-color: transparent;
 }
 
 .l-header {
@@ -88,6 +92,15 @@ img {
   left: 50%;
   transform: translate(-50%, -45%);
 }
+@media only screen and (max-width: 767px) {
+  .p-mv {
+    background-image: url(../../../images/home/mv-sp.jpg);
+  }
+  .p-mv__logo {
+    width: 65.2173913043vw;
+    transform: translate(-50%, -60%);
+  }
+}
 
 .p-intro {
   position: relative;
@@ -108,6 +121,27 @@ img {
   background-repeat: no-repeat;
   content: "";
 }
+@media screen and (max-width: 1350px) {
+  .p-intro {
+    padding-right: 130px;
+  }
+}
+@media screen and (max-width: 781px) {
+  .p-intro {
+    padding-right: 7.2vw;
+  }
+}
+@media only screen and (max-width: 767px) {
+  .p-intro__concept {
+    font-size: 7.5609756098vw !important;
+  }
+  .p-intro::before {
+    width: 88.6746987952dvw;
+    height: 125.7831325301dvw;
+    transform: translateY(-52%);
+    background-image: url(../../../images/home/illus-tree-sp@2x.png);
+  }
+}
 
 .p-news {
   padding-top: 40px;
@@ -122,26 +156,5 @@ img {
 .p-news__title-sub {
   margin-top: 10px;
   font-size: clamp(17px, 1.063rem + (1vw - 3.2px) * 0.102, 18px);
-}
-@media only screen and (max-width: 767px) {
-  .p-mv {
-    background-image: url(../../../images/home/mv-sp.jpg);
-  }
-  .p-mv__logo {
-    width: 65.2173913043vw;
-    transform: translate(-50%, -60%);
-  }
-  .p-intro {
-    padding-right: 0;
-  }
-  .p-intro__concept {
-    font-size: 7.5609756098vw !important;
-  }
-  .p-intro::before {
-    width: 88.6746987952dvw;
-    height: 125.7831325301dvw;
-    transform: translateY(-52%);
-    background-image: url(../../../images/home/illus-tree-sp@2x.png);
-  }
 }/*# sourceMappingURL=style.css.map */
 /*# sourceMappingURL=style.css.map */

@@ -29,8 +29,7 @@
 }
 
 
-// ブログ、お知らせ一覧共通
-.c-blog,
+// お知らせ一覧
 .c-news {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
@@ -110,7 +109,7 @@
             max-width: 100%;
         }
 
-        p{
+        p {
             margin-bottom: 32px;
         }
 
@@ -151,20 +150,28 @@
             font-size: 1.1em;
         }
 
-        p:not(:wp-caption-text) {
+        p:not(.wp-element-caption) {
             margin-block: 2rem;
         }
 
         /* 引用 */
         blockquote {
-            margin: 1.5em 1em;
+            padding: 1.5em 1em;
             font-style: italic;
+            background-color: rgba($color-white, 0.9);
+            color: $color-text;
+            border-left: 4px solid $color-green-light;
+
+            p:last-child {
+                margin-bottom: 0;
+            }
         }
 
         blockquote cite {
             display: block;
             margin-top: 0.5em;
             font-size: 0.9em;
+            color: $color-text-gray;
         }
 
         /* テーブル */
@@ -182,13 +189,54 @@
         th,
         td {
             padding: 0.5em;
-            border: 1px solid color-gray-light;
+            border: 1px solid $color-gray-light;
             text-align: left;
         }
 
         th {
-            background: color-gray-light;
             font-weight: bold;
+        }
+
+        // 画像の配置
+        .alignright {
+            float: right;
+            margin-left: 1em;
+            margin-bottom: 1em;
+        }
+
+        .alignleft {
+            float: left;
+            margin-right: 1em;
+            margin-bottom: 1em;
+        }
+
+        .aligncenter {
+            display: block;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .wp-block-image::after {
+            content: "";
+            display: block;
+            clear: both;
+        }
+
+
+        .wp-block-image figcaption {
+            display: block;
+        }
+
+        .wp-block-image.alignleft figcaption {
+            text-align: left;
+        }
+
+        .wp-block-image.alignright figcaption {
+            text-align: right;
+        }
+
+        .wp-block-image.aligncenter figcaption {
+            text-align: center;
         }
 
         /* 定義リスト */
@@ -244,7 +292,7 @@
         kbd,
         tt {
             font-family: monospace;
-            background: color-gray-light;
+            background: $color-gray-light;
             padding: 0.2em 0.4em;
             border-radius: 3px;
         }
@@ -305,17 +353,17 @@
         }
 
         input {
-            background-color: color-white;
+            background-color: $color-white;
 
             &[type="submit"] {
                 background-color: $color-orange-dark;
-                color: color-white;
+                color: $color-white;
                 padding-inline: 1.5em;
             }
         }
     }
 
-    &.--news {
+    &.\--news {
         .c-article__header {
             border-color: $color-white;
         }
@@ -341,9 +389,8 @@
     font-size: 14px;
 
 
-    &.--news {
+    &.\--news {
         background-color: $color-white;
         color: $color-green;
     }
 }
-

@@ -37,7 +37,10 @@ img {
 }
 
 ::selection {
-    background-color: $color-orange-dark;
+    background-color: $color-orange;
     color: $color-white;
 }
 
+::-webkit-tap-highlight-color {
+    background-color: transparent;
+}

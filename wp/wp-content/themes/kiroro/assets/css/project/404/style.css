@@ -42,13 +42,17 @@ img {
 }
 
 ::-moz-selection {
-  background-color: #c18d6f;
+  background-color: #f4a466;
   color: #ffffff;
 }
 
 ::selection {
-  background-color: #c18d6f;
+  background-color: #f4a466;
   color: #ffffff;
+}
+
+::-webkit-tap-highlight-color {
+  background-color: transparent;
 }
 
 .p-content {
