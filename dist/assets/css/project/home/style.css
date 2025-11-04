@@ -55,50 +55,49 @@ img {
   background-color: transparent;
 }
 
-.l-header {
-  display: block;
-}
-
-.p-mv {
+.p-swiper {
   position: relative;
   width: 100%;
-  height: 100dvh;
-  min-height: 700px;
-  background-image: url(../../../images/home/mv.jpg);
-  background-size: cover;
-  background-repeat: no-repeat;
+  height: 650px;
 }
-.p-mv__video {
-  z-index: 0;
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
+.p-swiper__wrapper, .p-swiper__slide, .p-swiper picture {
+  width: 100% !important;
+  height: 100% !important;
+}
+.p-swiper__img {
   width: 100%;
   height: 100%;
   -o-object-fit: cover;
   object-fit: cover;
+  -o-object-position: center;
+  object-position: center;
 }
-.p-mv__video video {
-  width: 100%;
-  height: 100%;
-  -o-object-fit: cover;
-  object-fit: cover;
+.p-swiper__img.\--top {
+  -o-object-position: top;
+  object-position: top;
 }
-.p-mv__logo {
-  z-index: 10;
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -45%);
+.p-swiper__img.\--center {
+  -o-object-position: center;
+  object-position: center;
+}
+@media only screen and (min-width: 1600px) {
+  .p-swiper {
+    height: 730px;
+  }
+}
+@media only screen and (max-width: 1300px) {
+  .p-swiper {
+    aspect-ratio: 1366/700;
+    height: auto;
+  }
 }
 @media only screen and (max-width: 767px) {
-  .p-mv {
-    background-image: url(../../../images/home/mv-sp.jpg);
+  .p-swiper {
+    aspect-ratio: 1/1;
   }
-  .p-mv__logo {
-    width: 65.2173913043vw;
-    transform: translate(-50%, -60%);
+  .p-swiper__img {
+    -o-object-position: top;
+    object-position: top;
   }
 }
 
@@ -112,8 +111,8 @@ img {
   position: absolute;
   top: 0;
   right: 0;
-  width: min(66.3026521061dvw, 53.125rem);
-  height: min(100.0780031201dvw, 80.1875rem);
+  width: min(59.6723868955dvw, 47.8125rem);
+  height: min(90.0936037441dvw, 72.1875rem);
   transform: translateY(-57%);
   background-image: url(../../../images/home/illus-tree@2x.png);
   background-position: center right;
@@ -136,8 +135,8 @@ img {
     font-size: 7.5609756098vw !important;
   }
   .p-intro::before {
-    width: 88.6746987952dvw;
-    height: 125.7831325301dvw;
+    width: 79.7590361446dvw;
+    height: 113.2530120482dvw;
     transform: translateY(-52%);
     background-image: url(../../../images/home/illus-tree-sp@2x.png);
   }

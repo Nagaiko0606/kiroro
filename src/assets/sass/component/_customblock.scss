@@ -2,15 +2,14 @@
 @use "../foundation/mixins" as *;
 
 // lazyblockエディタ表示
-.lazyblock {
-    padding: 0;
-    box-shadow: 0 0 0 1px violet;
-    background-color: transparent;
-
-    .lzb-content-title {
-        display: none;
+.editor-styles-wrapper{
+    [data-type*="lazyblock"]{
+        padding: 0;
+        box-shadow: 0 0 0 1px violet;
+        background-color: transparent;
     }
 }
+
 
 // / lightbox
 

@@ -59,6 +59,41 @@
 					"color": "#4D4D4D",
 					"name": "Color-text-gray",
 					"slug": "color-text-gray"
+				},
+				{
+					"color": "#5db4a0",
+					"name": "Primary",
+					"slug": "primary"
+				},
+				{
+					"color": "#4d9988",
+					"name": "Primary-text",
+					"slug": "primary-text"
+				},
+				{
+					"color": "#edf5f3",
+					"name": "Primary-light",
+					"slug": "primary-light"
+				},
+				{
+					"color": "#3e8274",
+					"name": "Primary-dark",
+					"slug": "primary-dark"
+				},
+				{
+					"color": "#a28c74",
+					"name": "Secondary",
+					"slug": "secondary"
+				},
+				{
+					"color": "#f1f0e8",
+					"name": "Secondary-light",
+					"slug": "secondary-light"
+				},
+				{
+					"color": "#804f1b",
+					"name": "Secondary-dark",
+					"slug": "secondary-dark"
 				}
 			]
 		},

@@ -24,7 +24,7 @@ function mytheme_enqueue_assets()
     wp_enqueue_style(
         'theme-style',
         get_stylesheet_uri(),
-        array(), 
+        array(),
         filemtime(get_theme_file_path('style.css'))
     );
 
@@ -123,7 +123,7 @@ function mytheme_enqueue_assets()
         filemtime(get_theme_file_path('assets/js/vender/lightbox/js/lightbox.min.js')),
         true,
     );
-    
+
     // swiperのJavaScriptを読み込み
     wp_enqueue_script(
         'swiper-script',
@@ -273,19 +273,22 @@ function mytheme_register_block_styles()
 add_action('init', 'mytheme_register_block_styles');
 
 // グループマップブロッグの登録
-function render_group_map_block( $attributes, $content ) {
+function render_group_map_block($attributes, $content)
+{
     ob_start();
-    get_template_part( 'assets/group-map/group-map' );
+    get_template_part('assets/group-map/group-map');
     return ob_get_clean();
 }
 
-add_shortcode( 'group_map', 'render_group_map_block' );
+add_shortcode('group_map', 'render_group_map_block');
 
 
 // お知らせ一覧ブロックの登録
-function render_news_section() {
+function render_news_section()
+{
     ob_start();
-    get_template_part( 'template-parts/section-news' ); 
+    get_template_part('template-parts/section-news');
     return ob_get_clean();
-    }
-    add_shortcode( 'section_news', 'render_news_section' );
+}
+add_shortcode('section_news', 'render_news_section');
+

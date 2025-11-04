@@ -57,7 +57,7 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
   // スワイパー
-  const swiper = new Swiper('.c-swiper', {
+  const swiper = new Swiper('.p-swiper', {
     autoplay: {
       delay: 4000,
       disableOnInteraction: false,

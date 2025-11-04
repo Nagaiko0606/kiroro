@@ -3,7 +3,7 @@
 
 
 .c-section-title {
-    font-size: $font-xxlarge;
+    font-size: clamp(1.25rem, 0.8695rem + 1.4706vw, 20rem);
     letter-spacing: 0.2em;
     display: flex;
     flex-direction: column;
@@ -12,7 +12,7 @@
 
     &::before{
         content: "";
-        font-size: $font-xxlarge;
+        font-size: clamp(1.25rem, 0.8695rem + 1.4706vw, 20rem);
         display: inline-block;
         background-size: contain;
         background-repeat: no-repeat;

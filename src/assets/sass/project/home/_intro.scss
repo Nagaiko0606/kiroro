@@ -8,8 +8,8 @@
     &::before{
         content: "";
         display: inline-block;
-        width: pc_vw(850);
-        height: pc_vw(1283);
+        width: pc_vw(765);
+        height: pc_vw(1155);
         background-image: url(../../../images/home/illus-tree@2x.png);
         background-size: contain;
         background-repeat: no-repeat;
@@ -35,8 +35,8 @@
         }
         &::before{
             background-image: url(../../../images/home/illus-tree-sp@2x.png);
-            width: sp_vw(368);
-            height: sp_vw(522);
+            width: sp_vw(331);
+            height: sp_vw(470);
             transform: translateY(-52%);
         }
     }
