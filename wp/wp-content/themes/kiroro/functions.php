@@ -7,6 +7,7 @@ function mytheme_setup()
     add_theme_support('theme-json');
     add_editor_style('/style.css');
     add_editor_style('/assets/css/main.css');
+    add_theme_support('title-tag');
 }
 add_action('after_setup_theme', 'mytheme_setup');
 
